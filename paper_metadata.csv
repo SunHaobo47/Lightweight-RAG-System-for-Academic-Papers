@@ -1,0 +1,11 @@
+﻿file_name,title,authors,year,source,abstract,keywords,path_to_text
+AndrewKeanGao_2023_PromptEngineeringforLLM.pdf,Prompt Engineering for Large Language Models,AndrewKeanGao,2023,,,,data\papers\processed\AndrewKeanGao_2023_PromptEngineeringforLLM.json
+AntonioSabbatella_2024_PromptOptimization.pdf,Prompt Optimization in Large Language Models,"Antonio Sabbatella, Andrea Ponti, Ilaria Giordani, Antonio Candelieri and Francesco Archetti",2024,,,,data\papers\processed\AntonioSabbatella_2024_PromptOptimization.json
+BowenCao_2024_WorstPromptPerformanceofLLM.pdf,On the Worst Prompt Performance of Large Language Models,"Deng Cai,Bowen Cao,Wai Lam,Zhisong Zhang,Yuexian Zou",2024,,,,data\papers\processed\BowenCao_2024_WorstPromptPerformanceofLLM.json
+Disha_2023_Repository-LevelPromptGenerationforLLM.pdf,Repository-Level Prompt Generation for Large Language Models of Code,"Disha Shrivastava, Hugo Larochelle, Daniel Tarlow",2023,,,,data\papers\processed\Disha_2023_Repository-LevelPromptGenerationforLLM.json
+EllenJiang_2022_PromptMaker.pdf,PromptMaker: Prompt-based Prototyping with Large Language Models,EllenJiang,2022,,,,data\papers\processed\EllenJiang_2022_PromptMaker.json
+Laria Reynolds_2021_PromptProgramming.pdf,Prompt Programming for Large Language Models: Beyond the Few-Shot Paradigm,Laria Reynolds,2021,,,,data\papers\processed\Laria Reynolds_2021_PromptProgramming.json
+PranabSahoo_2024_promptEngineering.pdf,promptEngineering,PranabSahoo,2024,,,,data\papers\processed\PranabSahoo_2024_promptEngineering.json
+Shubham_2024_EngineeringMethodsForLLM.pdf,EngineeringMethodsForLLM,Shubham,2024,,,,data\papers\processed\Shubham_2024_EngineeringMethodsForLLM.json
+Silviu_2023_BoostedPromptEnsemblesforLLM.pdf,BoostedPromptEnsemblesforLLM,Anonymous Submission,2023,,,,data\papers\processed\Silviu_2023_BoostedPromptEnsemblesforLLM.json
+YongchaoZhou_2023_LLMPrompt.pdf,LLMPrompt,YongchaoZhou,2023,,,,data\papers\processed\YongchaoZhou_2023_LLMPrompt.json
