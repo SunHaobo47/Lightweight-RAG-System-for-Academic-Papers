@@ -131,7 +131,7 @@ D1–D4 单独划分，因为它影响 refusal、boundary handling 与 hallucina
 - `Retrieval Pass Rule`
 - `Generation Pass Rule`
 - `Expected Response Policy`
-- `RAGAS Eval Profile`
+- `Eval Profile`
 
 ### 4.1 各字段作用 (Role of Each Field)
 
@@ -148,7 +148,7 @@ D1–D4 单独划分，因为它影响 refusal、boundary handling 与 hallucina
 - **Retrieval Pass Rule**：检索何时算通过
 - **Generation Pass Rule**：生成何时算通过
 - **Expected Response Policy**：期望的响应策略，如 direct answer、abstain、qualified answer、correct false premise
-- **RAGAS Eval Profile**：后续 judge / export 用的轻量评测配置标签
+- **Eval Profile**：后续 judge / export 用的轻量评测配置标签
 
 ### 4.2 当前 answerability 与 response-policy 分布
 
