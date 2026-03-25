@@ -6,6 +6,10 @@
 ---
 ## Demo
 
+
+Uploading 908081e7615cb5579219e346a4b195d0_raw.mp4…
+
+
 ## 环境配置
 
 ### 1. Python 版本要求
@@ -32,7 +36,10 @@ RAG 检索与推理依赖：
 pip install langchain langchain-community langchain-text-splitters pypdf
 pip install sentence-transformers faiss-cpu torch transformers openpyxl
 ```
-
+app 依赖：
+```bash
+pip install streamlit
+```
 ### 4. 本地大模型准备 
 
 在 Task 2 生成回答时，依赖本地运行的大语言模型。代码中使用的是 `Ollama` 接口（调用 `qwen2:7b`）：
