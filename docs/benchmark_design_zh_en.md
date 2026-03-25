@@ -247,14 +247,6 @@ Core Evidence 不等于“最完整的证据集合”，也不等于“所有相
 - 约束 Reference Answer / Minimum Acceptable Answer 的支持边界
 - 支撑 D 类题中的 abstention / qualified answer / premise correction 判断
 
-在 qrels 语境下，可作如下对齐：
-
-- **Core Evidence** → qrels = 2
-- **Supporting Evidence** → qrels = 1
-- 未标注相关证据 → qrels = 0
-
-但在当前项目阶段，evidence 的主要用途仍是**诊断与归因**，而非构建一个完全标准化的 IR benchmark qrels set。
-
 ### 7.2 Supporting Evidence 的定义与作用
 
 Supporting Evidence 指与问题相关、能补充上下文、去歧义、增强回答完整性或支撑边界判断的证据，但它本身通常不决定“该题是否已经可答”。
