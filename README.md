@@ -6,10 +6,6 @@
 ---
 ## Demo
 
-
-https://github.com/user-attachments/assets/07aedc00-f8f8-4ac1-98c3-a3d66245eb1c
-
-
 ## 环境配置
 
 ### 1. Python 版本要求
