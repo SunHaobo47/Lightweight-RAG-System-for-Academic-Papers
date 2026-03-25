@@ -1,0 +1,1139 @@
+﻿QID,Question,Target_Doc_IDs,Generated_Answer,Retrieved_Context,Retrieved_Sources
+1,"In the French-to-English translation setting, what common prompting failure mode do the authors observe?",1,"The context provided does not contain information about a specific study or paper discussing the French-to-English translation setting or any common prompting failure modes observed. Therefore, based on the given documents, there is no answer to the question regarding common prompting failure modes in the French-to-English translation setting.","[Chunk 1 | Source: AndrewKeanGao_2023_PromptEngineeringforLLM.pdf]
+languagemodelsthrough“prompts'',or naturallanguageinstructions.Carefullydesignedpromptscanleadtosignificantlybetteroutputs.
+
+------------------------
+
+[Chunk 2 | Source: Shubham_2024_EngineeringMethodsForLLM.pdf]
+3.20 M ACHINE TRANSLATION
+In this task, a model is tested on it’s ability in terms of tran slation between two languages. The different
+datasets which we came across while reading up on different p rompting techniques for this task include
+Salient Translation Error Detection Srivastava et al. (202 2), FLORES Costa-juss` a et al. (2022), WMT21
+Farhad et al. (2021), Multi-Domain Aharoni & Goldberg (2020 ) and PDC Sun et al. (2020). Table 20 lists
+
+------------------------
+
+[Chunk 3 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+we learn to produce prompts conditioned on each example.
+Another important distinction is that we do not require ac-
+cess to the weights of the LM. A concurrent work as ours,
+(Wang et al., 2022) studies the role of prompt-tuning when
+compared to fine-tuning for code translation, defect local-
+ization, and code summarization. However, their technique
+requires access to the weights of the LLM and they perform
+experiments over models that are much smaller in scale than","[""AndrewKeanGao_2023_PromptEngineeringforLLM.pdf"", ""Shubham_2024_EngineeringMethodsForLLM.pdf"", ""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf""]"
+2,"According to the paper, why is APE considered an automatic prompt engineering method?",2,"APE (Automatic Prompt Engineer) is considered an automatic prompt engineering method because it proposes a systematic approach for generating and selecting instructions or prompts. Inspired by classical program synthesis and the human approach to prompt engineering, APE aims to automate the process of instruction generation and selection for language models (LLMs). This automation allows for optimizing existing templates to improve performance on various reasoning tasks, thereby addressing the significant dependency of task performance on the quality of prompts used to guide the model. By doing so, APE represents a step towards making prompt engineering more accessible and efficient, potentially leading to better outcomes in tasks that require specific or nuanced instructions from LLMs.","[Chunk 1 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+to find a prompt starting with “Let’s” that maximizes the likelihood of these correct reasoning steps.
+See Table 5 for the template used for prompt generation and evaluation. APE produces the prompt
+“Let’s work this out in a step by step way to be sure we have the right answer.” This generated prompt
+further improves performance from 78.7 to 82.0 on MultiArith and from 40.7 to 43.0 on GSM8K. We
+believe this general workflow represents a common use-case for APE where prompt engineers use
+
+------------------------
+
+[Chunk 2 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+displayed impressive capabilities as general-purpose computers. However, task performance
+depends significantly on the quality of the prompt used to steer the model, and most effective
+prompts have been handcrafted by humans. Inspired by classical program synthesis and
+the human approach to prompt engineering, we propose Automatic Prompt Engineer 1
+(APE) for automatic instruction generation and selection. In our method, we treat the
+
+------------------------
+
+[Chunk 3 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+APE to optimize parts of their exiting templates to improve performance. See Figure 10 for details on
+the performance of this prompt on other reasoning tasks.
+4.4 T RUTHFUL QA
+We apply our method on TruthfulQA (Lin et al., 2022) to see how APE-generated instructions can
+steer an LLM to generate answers with different styles, and study the trade-off between truthfulness
+and informativeness. Borrowing the metrics from the original paper, we use APE to the learn","[""YongchaoZhou_2023_LLMPrompt.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf""]"
+3,"According to the paper, how is worst prompt performance defined?",4,"The context provided does not explicitly define what ""worst prompt performance"" means within the paper. However, based on the sections mentioned (Sections 3, 4, and 5), it can be inferred that worst prompt performance refers to the lowest or least effective performance of large language models when dealing with certain prompts. The paper discusses benchmarking these performances, identifying the worst prompts among semantically equivalent ones, and improving their performance through various analyses and methods.","[Chunk 1 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+parameters, how they were chosen, type of optimizer, etc.) necessary to understand the
+results?
+Answer: [Yes]
+Justification: In Sections 3 (Benchmarking the Worst Prompt Performance), 4 (Identifying
+the Worst Prompts) and 5 (Improving Worst Prompt Performance).
+Guidelines:
+• The answer NA means that the paper does not include experiments.
+• The experimental setting should be presented in the core of the paper to a level of detail
+that is necessary to appreciate the results and make sense of them.
+
+------------------------
+
+[Chunk 2 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+4 Identifying the Worst Prompts
+Given the noticeable performance disparities across semantically equivalent prompts, our next
+question is: can we identify the worst prompt among these paraphrases? This would not only aid our
+understanding of the model’s lower bound but also be instrumental in improving model performance
+by guiding the refinement of prompts. We investigate this matter from both model-agnostic (§4.1)
+and model-dependent (§4.2) perspectives.
+4.1 Model-agnostic Analysis
+
+------------------------
+
+[Chunk 3 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+improved, the highest score is only 58.92, suggesting
+that the models are largely unable to perceive the im-
+pact of the given prompts on their own performance.
+Discussion Our explorations over prompt perplexity, Min-k% Prob, hidden states, and model
+preference show that it is very challenging to identify the worst prompt in advance even with
+the access to the model. Note that this difficulty is often overlooked in previous studies as they","[""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf""]"
+4,"According to the paper, what problem does Repo-Level Prompt Generator (RLPG) solve, and what is its core value?",6,"According to the paper, the Repository-Level Prompt Generator (RLPG) addresses the issue of improving the effectiveness of large language models in code generation by proposing a method that substitutes part of the default context used by Codex with context from other parts of the repository. The core idea is governed by decisions on what specific context to substitute and where within the repository this context should be taken from. 
+
+The paper highlights the value of RLPG through its ability to generate example-specific prompts, which demonstrates an improvement in performance over using fixed prompt proposals. Specifically, both learned variants of RLPG (RLPG-H and RLPG-R) outperform the RLPG-BM25 method, emphasizing the importance of learning a Prompt Proposal Classifier (PPC). This indicates that by leveraging machine learning to adaptively generate prompts based on repository context, RLPG enhances the performance of large language models in code generation tasks.","[Chunk 1 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+In this section, we provide details of our framework. We
+start by describing our prompt proposals and then discuss
+our prompt proposal classifier which is followed by a de-
+scription of the prompt composer.
+2.1. Repo-Level Prompt Proposals
+The core idea of RLPG consists of substituting part of the de-
+fault context used by Codex with context coming from some-
+where else in the repository. The decision of what to take
+and from where in the repository to take from is governed
+
+------------------------
+
+[Chunk 2 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+Fixed Prompt Proposal (repo-wise)
+RLPG-R (repo-wise)
+Fixed Prompt Proposal (hole-wise)
+RLPG-R (hole-wise)
+0
+10
+20
+30
+40
+50
+60 Cur
+Sib
+SimN
+ImpSimN
+ImpSib
+Imp
+PaCl
+ImpPaCl
+ChCl
+ImpChCl
+Figure 2. (Top) Variation of RLPG and Fixed Prompt Proposal
+with #attempts ( k), when averaged over individual repositories
+(repo-wise) and all holes (hole-wise); (Bottom) Mean success rates
+of different prompt sources when they are applicable.
+good baseline but still performs worse than either the fixed
+
+------------------------
+
+[Chunk 3 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+posal, showing the value of generating example-specific
+prompts using RLPG. However, both the learned variants of
+RLPG, i.e., RLPG-H and RLPG-R outperform the RLPG-
+BM25, highlighting the importance of learning PPC. See
+Appendix D.1 and Appendix D.7 for the performance of
+all methods across individual repositories. Note that even
+though we consider identifier usage as a separate baseline,
+one could consider it as one of the prompt proposals leading
+to further improved performance of RLPG.","[""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf"", ""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf"", ""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf""]"
+5,Why can changing the wording of a prompt change how well it works?,1,"Changing the wording of a prompt can affect its performance because prompts are designed to guide large language models (LLMs) on what information or context they should consider when generating responses. The specific words and structure used in a prompt can highlight certain features or aspects of the input data, making them more salient for the model. This can lead to the model focusing on spurious features—unrelated or misleading details that might not be relevant but are emphasized by the wording of the prompt. By changing the wording, one can potentially guide the model away from these spurious features and towards more accurate or desired responses.
+
+Moreover, different wordings can influence how the model interprets the context provided in the prompt. For instance, a prompt with more specific language might help the model better understand the nuances of the task at hand, leading to improved performance. Conversely, overly broad or ambiguous prompts might confuse the model, causing it to generate responses that are less relevant or accurate.
+
+Additionally, the structure and format of the prompt can also impact its effectiveness. For example, breaking down a complex question into multiple prompts or using a more structured format might help the model process information more effectively, leading to better performance. Therefore, changing the wording of a prompt involves considering how it will be interpreted by the LLM, which in turn affects the relevance and accuracy of the generated responses.","[Chunk 1 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+to spurious features in prompt design or: How i learned to start worrying about prompt formatting.
+ArXiv preprint, abs/2310.11324, 2023.
+10
+69031
+https://doi.org/10.52202/079017-2205
+
+------------------------
+
+[Chunk 2 | Source: Silviu_2023_BoostedPromptEnsemblesforLLM.pdf]
+Automatic Prompt Engineering It has been observed
+that language model performance can be sensitive to the
+chosen prompt (Zhao et al., 2021), which has led to in-depth
+studies of prompting methodology (Liu et al., 2023; Wang
+et al., 2022a) and the development of several approaches to
+automatic prompt generation (Shin et al., 2020; Gao et al.,
+2020). While some of these approaches are gradient-based
+(Li & Liang, 2021; Qin & Eisner, 2021), requiring access
+
+------------------------
+
+[Chunk 3 | Source: PranabSahoo_2024_promptEngineering.pdf]
+review approach, we meticulously delve into the intricacies
+of diverse cutting-edge prompting methods. Our examination
+encompasses their applications, the language models utilized,
+and the datasets subjected to experimentation, providing a
+detailed and nuanced analysis of the evolving landscape of
+prompt engineering. Additionally, we discuss the pros and
+cons of these techniques, offering insights into their compara-
+tive efficacy. We present a comprehensive taxonomy diagram","[""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""Silviu_2023_BoostedPromptEnsemblesforLLM.pdf"", ""PranabSahoo_2024_promptEngineering.pdf""]"
+6,Why does the paper argue that Bayesian Optimization is suitable for black-box LLM settings?,3,"The paper argues that Bayesian Optimization is suitable for black-box Large Language Model (LLM) settings because it offers several advantages in terms of sample efficiency, modular structure, and versatility. Specifically, Bayesian Optimization methods are designed to be efficient in scenarios where function evaluations are expensive or costly, which aligns well with the computational demands of working with large language models like GPT-4 as a black-box service. The paper highlights that exhaustive search strategies for optimizing prompts within these models are impractical due to the vast combinatorial search space, making Bayesian Optimization methods particularly appealing due to their ability to navigate such complex spaces efficiently using fewer evaluations.
+
+Moreover, the modular structure of Bayesian Optimization allows it to be easily adapted and integrated with different components or frameworks, which is beneficial when working with diverse LLMs. The paper also mentions that Bayesian Optimization can handle uncertainty quantification effectively, providing a layer of reliability in the optimization process. This feature is crucial for ensuring that the optimized prompts are not only effective but also robust against potential uncertainties within the black-box LLM environment.
+
+Additionally, the paper references previous works like InstructZero and INSTINCT which utilize neural networks or similar techniques to optimize prompts in black-box settings, further supporting the argument that Bayesian Optimization methods can be effectively applied alongside other machine learning approaches for prompt optimization tasks. The combination of these factors—sample efficiency, modular design, uncertainty handling, and compatibility with existing methodologies—contributes to the paper's assertion that Bayesian Optimization is well-suited for optimizing prompts in black-box Large Language Models.","[Chunk 1 | Source: AntonioSabbatella_2024_PromptOptimization.pdf]
+which adds a layer of uncertainty quantification to improve the reliability of prompt tuning
+and to consider a strict notion of a likelihood-free black-box setting.
+Bayesian approaches : Bayesian Optimization is a widely considered a sampling-
+efficient solution for black-box optimization. It has been gaining importance for prompt
+optimization in large language models. Ref. [ 24] propose a two-stage approach called
+InstructZero: using an open source LLM, the first stage converts a prompt into an in-
+
+------------------------
+
+[Chunk 2 | Source: AntonioSabbatella_2024_PromptOptimization.pdf]
+struction and (in the second stage) submits it to the black-box LLM—which computes
+the performance score of this instruction and then sends it to the Bayesian Optimization
+module to produce new soft prompts. A specific application in the context of adversarial
+learning/optimization is reported in [25]. A similar approach, namely INSTINCT, has been
+recently proposed in [26]. The main characteristic is that a neural network is used instead
+
+------------------------
+
+[Chunk 3 | Source: AntonioSabbatella_2024_PromptOptimization.pdf]
+of a Gaussian Process in the BO algorithm. Finally, a preliminary version of the BO-based
+prompt optimization algorithm presented in this manuscript has been briefly described
+in [27]. LLMs have also been proposed for the multi-armed bandit (MAB) problems, which
+are closely related to Bayesian Optimization. Ref. [28] propose an LLM-based strategy that
+enables adaptive balancing of exploration and exploitation. Ref. [29] presents an approach","[""AntonioSabbatella_2024_PromptOptimization.pdf"", ""AntonioSabbatella_2024_PromptOptimization.pdf"", ""AntonioSabbatella_2024_PromptOptimization.pdf""]"
+7,Why is prompt optimization basically a combinatorial search problem here?,3,"Prompt optimization is considered a combinatorial search problem due to the vast and discrete nature of the prompt space. Given the dimension of the vocabulary \(V\) and the prompt length \(L\), the number of possible prompts forms an intractable combinatorial optimization problem, with the search space consisting of all possible combinations that can be generated by concatenating n-grams from \(V\). This discrete nature leads to a large combinatorial search space, making exhaustive search impractical. Therefore, efficient search strategies are needed, such as Bayesian Optimization (BO), which is used in this context for its sample efficiency and modular structure.","[Chunk 1 | Source: AntonioSabbatella_2024_PromptOptimization.pdf]
+Mathematics 2024, 12, 929 12 of 14
+Table 4. Comparative results over different prompt lengths for the task MRPC.
+Task Prompt Length Best Score on Test
+MRPC 25 79.7619
+MRPC 50 78.4431
+MRPC 75 78.4195
+5. Conclusions
+The main conclusion of this paper is that Bayesian Optimization could become an
+effective tool for prompt optimization. This vast discrete combinatorial prompt space
+poses specific challenges for direct optimization. The large discrete prompt search space is
+
+------------------------
+
+[Chunk 2 | Source: AntonioSabbatella_2024_PromptOptimization.pdf]
+Given the dimension of the vocabulary V and the prompt length L, prompt optimiza-
+tion is an intractable combinatorial optimization problem, with a search space consisting of
+
+------------------------
+
+[Chunk 3 | Source: AntonioSabbatella_2024_PromptOptimization.pdf]
+met. 
+ 
+Figure 1. Prompt optimization loop using BO. 
+3.3. Continuous Relaxation of the Combinatorial Space 
+The goal of BO, considering the HPT problem, is to ﬁnd the optimal prompt 𝐩∗ ∈𝒱 ℓ. 
+It is important to note that the prompt space, 𝒱ℓ, is a combinatorial space consisting of all 
+the possible prompts with length ℓ which can be generated by concatenating n-grams 
+from 𝒱. Working in this discrete space can be intractable because the number of possible","[""AntonioSabbatella_2024_PromptOptimization.pdf"", ""AntonioSabbatella_2024_PromptOptimization.pdf"", ""AntonioSabbatella_2024_PromptOptimization.pdf""]"
+8,What does it mean for reliability if two prompts mean the same thing but get very different results?,4,"It means that there is a lack of prompt consistency, which refers to the inherent resilience of Large Language Models (LLMs) to variations in prompts. If two prompts that are supposed to have the same meaning yield very different results, it indicates that the model is not robust or consistent in its performance across similar inputs. This inconsistency can undermine the reliability and predictability of the LLM's output, making it difficult to trust or depend on the model's responses for critical applications.","[Chunk 1 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+2 Related Work
+Existing research on prompt robustness can be classified into two categories. On the one hand,
+research efforts have been focused on enhancing the inherent resilience of LLMs to prompt variations,
+namely prompt consistency. On the other hand, progress has been made in automating prompt
+engineering, the process to find the optimal prompt that yields the best performance.
+Prompt Consistency. Previous studies (Gu et al., 2022; Wang et al., 2023a; Zhu et al., 2023;
+
+------------------------
+
+[Chunk 2 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+Identifier Usage (NN) 64.91 10.52 67.94 12.03
+Fixed Prompt Proposal 65.78 12.00 68.01 12.15
+RLPG-BM25 66.41 13.07 68.15 12.39
+RLPG-H 68.51 16.65 69.26 14.21
+RLPG-R 67.80 15.44 69.28 14.26
+D.2. Ablation on Performance based on Prompt Proposal
+Figure 3 shows the mean success rate of prompt context types when success is counted only for the cases when these prompt
+contexts are applicable. As can be seen from the figure, post lines is the most useful prompt context type on an average. The
+
+------------------------
+
+[Chunk 3 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+We further illustrate the difficulty in identifying the worst prompt from both model-
+agnostic and model-dependent perspectives, emphasizing the absence of a shortcut
+to characterize the worst prompt. We also attempt to enhance the worst prompt
+performance using existing prompt engineering and prompt consistency methods,
+but find that their impact is limited. These findings underscore the need to create
+more resilient LLMs that can maintain high performance across diverse prompts.","[""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf""]"
+9,Why doesn't a bigger context window automatically fix the prompt design problem?,6,"The answer cannot be directly derived from the provided context as it does not explicitly discuss the prompt design problem or how a larger context window relates to fixing it. However, based on the information given, we can infer that:
+
+A smaller context length might lead to loss of relevant information when truncating the prompt proposal context to fit inside the prompt due to its limited size. This implies that even if there is more context available (i.e., a bigger context window), simply increasing the context size may not automatically solve the prompt design problem because it still needs to be effectively utilized within the constraints of the prompt.
+
+The context suggests that the effectiveness of different types of prompt contexts can vary, with some contributing more than others. This implies that there might be issues related to how well certain prompts are designed or integrated into the larger context, which could affect their performance regardless of the context size.
+
+In summary, while a bigger context window theoretically provides more information for potential use in improving prompt effectiveness, the actual design and integration of these prompts within the constraints of the available context length might still pose challenges that need to be addressed separately.","[Chunk 1 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+our prompt proposals. However, when compared to a larger context length, the relative gains are smaller. This is expected as
+a smaller context length means that the relevant context coming from a prompt proposal needs to be truncated to make it fit
+inside the prompt, thereby leading to loss of information.
+20
+
+------------------------
+
+[Chunk 2 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+contribution from other prompt context types though smaller than post lines is still significant highlighting the importance of
+each prompt context type.
+18
+
+------------------------
+
+[Chunk 3 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+normally used by Codex (default Codex context) to generate
+the prompt. Since the total length that can be used for a
+prompt is fixed, we adopted a dynamic context allocation
+strategy where if the prompt proposal context is shorter than
+its allocated length, we assign the remaining portion from
+the prompt proposal context to the default Codex context.
+The prompt proposal context is always added before the
+default Codex context. For all prompt proposals, we assign","[""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf"", ""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf"", ""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf""]"
+10,"Why can prompt engineering become a workflow problem, not just a model problem, in real prototyping?",7,"Prompt engineering can become a workflow problem rather than solely a model problem in real prototyping because it involves creating effective natural language instructions (prompts) that guide large language models (LLMs) to extract knowledge efficiently and accurately. The process of crafting these prompts requires deep understanding of both the LLM's capabilities and the specific task requirements, which can be complex and time-consuming. This is particularly challenging in real-world applications where tasks are diverse and require tailored approaches.
+
+The workflow problem arises due to several factors:
+
+1. **Task-Specificity**: Different tasks may require different types of prompts that effectively elicit relevant information from LLMs. Crafting these prompts requires domain expertise, understanding the nuances of language, and experimenting with various formulations to find the most effective ones.
+
+2. **Model Adaptation**: While LLMs are powerful in processing large volumes of text, their responses can be influenced by the quality and specificity of the prompts provided. This necessitates continuous tuning and optimization of prompts based on feedback from model performance, which can become a significant part of the workflow.
+
+3. **Scalability Issues**: As the number of tasks or datasets increases, managing and optimizing prompts for each becomes more challenging. This requires systematic approaches to categorize, evaluate, and refine prompts across different applications and models.
+
+4. **Integration with Other Tools and Processes**: Prompt engineering needs to be integrated seamlessly into existing workflows, which can involve collaboration between multiple teams (e.g., data scientists, engineers, domain experts). Ensuring that the prompt creation process is efficient and does not disrupt ongoing operations adds another layer of complexity.
+
+5. **Continuous Learning and Adaptation**: As new models are developed or as tasks evolve over time, prompts may need to be updated or replaced. This requires a dynamic approach to prompt engineering that can adapt to changes in model capabilities and task requirements.
+
+In summary, while the core challenge of prompt engineering is to create effective prompts for LLMs, the workflow problem emerges from the practical challenges of implementing this process efficiently across diverse tasks and models, integrating it into existing workflows, and continuously adapting to new needs.","[Chunk 1 | Source: PranabSahoo_2024_promptEngineering.pdf]
+is often required for task-specific performance. This is the
+transformative promise of prompt engineering, pushing the
+boundaries of AI and opening doors to a future brimming with
+possibilities. In an ever-evolving landscape, ongoing research
+consistently reveals innovative approaches and applications
+within prompt engineering. The significance of prompt engi-
+neering is underscored by its capacity to steer model responses,
+enhancing the adaptability and applicability of LLMs across
+
+------------------------
+
+[Chunk 2 | Source: Shubham_2024_EngineeringMethodsForLLM.pdf]
+engineering.
+Prompt engineering is the process of creating natural language instructions, or prompts, to extract knowledge
+from LLMs in an organized manner. Prompt engineering, in con trast to earlier conventional models, relies
+only on the embedded knowledge of LLMs and does not require ex tensive parameter re-training or ﬁne-
+1
+
+------------------------
+
+[Chunk 3 | Source: PranabSahoo_2024_promptEngineering.pdf]
+of LLMs. This survey paper aims to serve as a foundational
+resource that systematically categorizes 41 distinct prompt
+engineering techniques based on their targeted functionali-
+ties, inspiring further research and empowering innovators in
+the evolving landscape of prompt engineering. The analysis
+spans applications, models, and datasets, shedding light on the
+strengths and limitations of each approach. Furthermore, we
+have added a diagram and a table to highlight the important","[""PranabSahoo_2024_promptEngineering.pdf"", ""Shubham_2024_EngineeringMethodsForLLM.pdf"", ""PranabSahoo_2024_promptEngineering.pdf""]"
+11,Why do prompt design choices have to account for context length and token cost?,8,"Prompt design choices must account for context length and token cost because these factors directly impact the performance, efficiency, and effectiveness of large language models (LLMs) when processing prompts. Context length refers to how much input an LLM can consider and generate at once; as this limit increases with newer models like GPT-4 and Anthropic’s Claude, providing more tokens in a prompt can lead to deteriorating performance or increased computational cost. Token cost is related to the resources required to process each token of information, which becomes more significant when dealing with longer prompts. Prompt truncation due to context length limitations may result in loss of relevant information from the prompt proposal, affecting its utility and outcomes. Therefore, managing these aspects ensures optimal use of LLMs for tasks requiring specific input lengths or within budget constraints.","[Chunk 1 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+our prompt proposals. However, when compared to a larger context length, the relative gains are smaller. This is expected as
+a smaller context length means that the relevant context coming from a prompt proposal needs to be truncated to make it fit
+inside the prompt, thereby leading to loss of information.
+20
+
+------------------------
+
+[Chunk 2 | Source: AndrewKeanGao_2023_PromptEngineeringforLLM.pdf]
+One of the main limitations of prompting is the context length of LLMs, which is essentially howmuchinput an LLMcan consider and generate. Context lengths are rapidly increasing, with GPT-4 having a32,000 token (~24,000 word) context length and Anthropic’s Claude having a 100,000 token (75,000word) context length. Someusershavereporteddeterioratingperformanceasmoretokensareprovidedinthe prompt. Another consideration for prompt engineering is cost. For example, few-shot prompting canmultiply the length of
+
+------------------------
+
+[Chunk 3 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+context length allowed by Codex. Therefore, in PPC when
+we obtain the representation of the prompt proposal context,
+we need to truncate the context. This might lead to omitting
+important parts of the prompt proposal context in certain
+cases. Using pretrained models that allow larger context
+length or models that augment the context (Wu et al., 2022)
+offer avenues for future work. See Appendix D.5 for results
+when we use a smaller context length with Codex.","[""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf"", ""AndrewKeanGao_2023_PromptEngineeringforLLM.pdf"", ""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf""]"
+12,"According to the survey, how can prompt engineering extend task adaptation without changing model parameters?",9,"Prompt engineering extends task adaptation without changing model parameters by leveraging task-specific instructions, known as prompts. These prompts allow for seamless integration of pre-trained models into downstream tasks by eliciting desired model behaviors solely based on the given prompt, thus enhancing model efficacy without modifying the core model parameters.","[Chunk 1 | Source: PranabSahoo_2024_promptEngineering.pdf]
+is often required for task-specific performance. This is the
+transformative promise of prompt engineering, pushing the
+boundaries of AI and opening doors to a future brimming with
+possibilities. In an ever-evolving landscape, ongoing research
+consistently reveals innovative approaches and applications
+within prompt engineering. The significance of prompt engi-
+neering is underscored by its capacity to steer model responses,
+enhancing the adaptability and applicability of LLMs across
+
+------------------------
+
+[Chunk 2 | Source: PranabSahoo_2024_promptEngineering.pdf]
+elements shaping the prompt, and a user input interface.
+evident in its transformative impact on the adaptability of
+LLMs and VLMs. By offering a mechanism to fine-tune
+model outputs through carefully crafted instructions, prompt
+engineering enables these models to excel across diverse tasks
+and domains. This adaptability is different from traditional
+paradigms, where model retraining or extensive fine-tuning
+is often required for task-specific performance. This is the
+
+------------------------
+
+[Chunk 3 | Source: PranabSahoo_2024_promptEngineering.pdf]
+Abstract
+Prompt engineering has emerged as an indispens-
+able technique for extending the capabilities of large
+language models (LLMs) and vision-language mod-
+els (VLMs). This approach leverages task-specific
+instructions, known as prompts, to enhance model
+efficacy without modifying the core model param-
+eters. Rather than updating the model parameters,
+prompts allow seamless integration of pre-trained
+models into downstream tasks by eliciting desired
+model behaviors solely based on the given prompt.","[""PranabSahoo_2024_promptEngineering.pdf"", ""PranabSahoo_2024_promptEngineering.pdf"", ""PranabSahoo_2024_promptEngineering.pdf""]"
+13,How does the paper distinguish manual prompt design from automatic prompt search?,2,"The paper distinguishes manual prompt design from automatic prompt search by highlighting that manual prompt design requires users to master the art of creating optimal prompts, which is unrealistic for most users due to time constraints. Automatic prompt search, on the other hand, involves using algorithms and methods to generate prompts without requiring extensive user input or expertise. This approach often necessitates testing on substantial labeled data to ensure the effectiveness of the generated prompts.","[Chunk 1 | Source: Silviu_2023_BoostedPromptEnsemblesforLLM.pdf]
+Automatic Prompt Engineering It has been observed
+that language model performance can be sensitive to the
+chosen prompt (Zhao et al., 2021), which has led to in-depth
+studies of prompting methodology (Liu et al., 2023; Wang
+et al., 2022a) and the development of several approaches to
+automatic prompt generation (Shin et al., 2020; Gao et al.,
+2020). While some of these approaches are gradient-based
+(Li & Liang, 2021; Qin & Eisner, 2021), requiring access
+
+------------------------
+
+[Chunk 2 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+Figure 1: An example illustrating the gap between existing benchmarks that evaluate prompt consis-
+tency and real user queries.
+Despite the efficacy of prompt engineering, it is not without its drawbacks. First, it is unrealistic to
+expect users to master the art of designing optimal prompts or to invest a significant amount of time
+in doing so. Second, automatic prompt engineering often necessitates testing on substantial labeled
+
+------------------------
+
+[Chunk 3 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+Identifier Usage (NN) 64.91 10.52 67.94 12.03
+Fixed Prompt Proposal 65.78 12.00 68.01 12.15
+RLPG-BM25 66.41 13.07 68.15 12.39
+RLPG-H 68.51 16.65 69.26 14.21
+RLPG-R 67.80 15.44 69.28 14.26
+D.2. Ablation on Performance based on Prompt Proposal
+Figure 3 shows the mean success rate of prompt context types when success is counted only for the cases when these prompt
+contexts are applicable. As can be seen from the figure, post lines is the most useful prompt context type on an average. The","[""Silviu_2023_BoostedPromptEnsemblesforLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf""]"
+14,How does the paper distinguish hard prompt tuning from soft prompt tuning?,3,"The paper distinguishes hard prompt tuning from soft prompt tuning by stating that hard prompt tuning directly searches for an optimal prompt in the combinatorial search space V^L, while soft prompt tuning uses continuous-valued language embeddings and searches for the optimal embedding via gradient-based optimization in the resulting continuous latent space.","[Chunk 1 | Source: AntonioSabbatella_2024_PromptOptimization.pdf]
+are elements of the vocabulary V.
+Prompt engineering methods can be split into two categories—Hard Prompt Tun-
+ing (HPT), which directly searches for an optimal prompt in the combinatorial search
+space V L, and Soft Prompt Tuning (SPT), which uses continuous-valued language em-
+beddings and searches for the optimal embedding via gradient-based optimization in the
+resulting continuous latent space. It is important to remark that hard prompts have two
+important advantages:
+
+------------------------
+
+[Chunk 2 | Source: AntonioSabbatella_2024_PromptOptimization.pdf]
+and describes hard prompt tuning via Bayesian Optimization and the continuous
+relaxation of the combinatorial space.
+• Section 4 “Computational Results” presents datasets, baselines, andcomputational results.
+• Section 5 contains conclusions, limitations, and perspectives of the proposed approach.
+2. Related Works
+Different modeling and algorithmic strategies have been proposed for prompt opti-
+mization. Ref. [ 4] were among the first to demonstrate the power of prompting for task
+
+------------------------
+
+[Chunk 3 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+parameters, how they were chosen, type of optimizer, etc.) necessary to understand the
+results?
+Answer: [Yes]
+Justification: In Sections 3 (Benchmarking the Worst Prompt Performance), 4 (Identifying
+the Worst Prompts) and 5 (Improving Worst Prompt Performance).
+Guidelines:
+• The answer NA means that the paper does not include experiments.
+• The experimental setting should be presented in the core of the paper to a level of detail
+that is necessary to appreciate the results and make sense of them.","[""AntonioSabbatella_2024_PromptOptimization.pdf"", ""AntonioSabbatella_2024_PromptOptimization.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf""]"
+15,"According to the paper, how do real-world user queries differ from task-specific benchmark prompts?",4,"According to the paper, real-world user queries often do not explicitly segregate task-level instruction and case-level input (See the right part of Figure 1). These queries may cover a wide array of tasks and it is not possible to optimize the prompts through evaluating on a task-specific testing set. This indicates that real-world user queries are more diverse and less structured compared to task-specific benchmark prompts, which are often designed with clear task-level instructions and case-level input separation for evaluation purposes.","[Chunk 1 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+Figure 1: An example illustrating the gap between existing benchmarks that evaluate prompt consis-
+tency and real user queries.
+Despite the efficacy of prompt engineering, it is not without its drawbacks. First, it is unrealistic to
+expect users to master the art of designing optimal prompts or to invest a significant amount of time
+in doing so. Second, automatic prompt engineering often necessitates testing on substantial labeled
+
+------------------------
+
+[Chunk 2 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+that the best task-level instruction might vary across individual cases. Second, they overlook the
+impact of variations in case-level input on model performance. Last but not least, real-world user
+queries often do not explicitly segregate task-level instruction and case-level input (See the right part
+of Figure 1). These queries may cover a wide array of tasks and it is not possible to optimize the
+prompts through evaluating on a task-specific testing set.
+
+------------------------
+
+[Chunk 3 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+variations. We introduced a new benchmark that shifts the focus from task-level instructions to case-
+level queries. Extensive experiments on ChatGPT and six open-source LLMs, revealed the substantial
+performance variability across different prompts, the challenge of predicting worst prompts, and the
+limited efficacy of existing methods for improving the worst prompts performance. Our findings
+underscored the importance of continued research into prompt robustness in more realistic settings.","[""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf""]"
+16,"How does the paper distinguish single-prompt, bagged-prompt, and boosted prompt ensembles?",5,"The paper distinguishes between single-prompt, bagged-prompt, and boosted prompt ensembles based on their performance when dealing with small training datasets (50-300 samples). Specifically, it finds that boosting offers a performance advantage over both randomly bagging few-shot examples and using single-prompt self-consistency. The difference can be notably large if the initial prompt is suboptimal. Boosted prompt ensembles are designed to work well together as an ensemble, aiming for combined predictions that outperform those of a single prompt output space ensemble or a multi-prompt bagged ensemble.","[Chunk 1 | Source: Silviu_2023_BoostedPromptEnsemblesforLLM.pdf]
+single prompt samples for self-consistency, and for bagging
+and boosting, 10 samples from each of 10 prompts.
+Do boosted prompt ensembles offer a performance ad-
+vantage over single prompt and bagged ensembles?
+Yes, in all cases, when a small training dataset (50-300
+samples) is available, we ﬁnd that boosting is superior to
+randomly bagging few shot examples as well as to single-
+prompt self-consistency. The difference to the latter can be
+quite large if the initial prompt is suboptimal, as observed
+
+------------------------
+
+[Chunk 2 | Source: Silviu_2023_BoostedPromptEnsemblesforLLM.pdf]
+advantage over single prompt and bagged prompt en-
+sembles?
+• How does our method’s performance vary with the
+amount of annotation available?
+• How sensitive is boosting to the initial prompt?
+• How does varying the number of ensemble members /
+samples per ensemble member impact results?
+• How does the level of “sufﬁcient agreement” for deter-
+mining correctness impact test-time boosting?
+• Can we further improve performance by applying
+weights to the ensemble members?
+
+------------------------
+
+[Chunk 3 | Source: Silviu_2023_BoostedPromptEnsemblesforLLM.pdf]
+training examples as in classical boosting when optimizing
+a “verbalizer” that maps model outputs to classes.
+3. Boosted Prompt Ensembles
+Our goal is to construct a set of few shot prompts for a
+pretrained language model that work well together as an
+ensemble, in the sense that their combined predictions do
+better than the predictions of a single prompt output space
+ensemble (Wang et al., 2022c) or a multi-prompt bagged
+ensemble (Wang et al., 2022b; Li et al., 2022b).","[""Silviu_2023_BoostedPromptEnsemblesforLLM.pdf"", ""Silviu_2023_BoostedPromptEnsemblesforLLM.pdf"", ""Silviu_2023_BoostedPromptEnsemblesforLLM.pdf""]"
+17,How do the two surveys organize the prompt-engineering landscape differently: by application area versus by NLP task?,"9,10","The first survey organizes the prompt-engineering landscape by categorizing applications, which can encapsulate numerous Natural Language Processing (NLP) tasks. This approach provides a broad overview where one application might cover multiple NLP tasks. The second survey, on the other hand, focuses on organizing the landscape based on different NLP tasks themselves. It likely presents an in-depth look at specific tasks and how they relate to prompt engineering methods.","[Chunk 1 | Source: Shubham_2024_EngineeringMethodsForLLM.pdf]
+on 29 different NLP tasks. There have not been a lot of prior sy stematic surveys on prompt engineering.
+Sahoo et al. (2024) surveys 29 prompting technique papers ba sed on their applications. This is a very broad
+categorization as a single application can encapsulate num erous NLP tasks. For example, one of the appli-
+cations which they discuss is reasoning and logic which can have plethora of NLP tasks like commonsense
+
+------------------------
+
+[Chunk 2 | Source: Shubham_2024_EngineeringMethodsForLLM.pdf]
+CoK [Wang et al. (2024), Li et al. (2023c),Cheng et al. (2022) ,
+Y e et al. (2023)]
+Figure 1: Taxonomy Diagram of Prompt Engineering Methods Ac ross Different NLP Tasks
+research papers. Another point to highlight is that in many w orks, the authors have experimented with
+different versions of the same dataset, making it difﬁcult f or an absolute comparison between different
+prompting techniques applied to them. Based on our understa nding, we have considered all the above-
+
+------------------------
+
+[Chunk 3 | Source: PranabSahoo_2024_promptEngineering.pdf]
+this survey aims to serve as a valuable resource for researchers
+and practitioners, offering insights into the latest developments
+and facilitating a deeper understanding of the evolving land-
+scape of prompt engineering. The structure of the paper is
+organized as follows: Section 2 presents the prompt engineer-
+ing techniques from both basic to advanced by categorizing
+application-area and Section 3 provides a conclusion along
+with considerations for future research endeavors.
+2 Prompt Engineering","[""Shubham_2024_EngineeringMethodsForLLM.pdf"", ""Shubham_2024_EngineeringMethodsForLLM.pdf"", ""PranabSahoo_2024_promptEngineering.pdf""]"
+18,How do the Reynolds paper and the worst-prompt paper describe two different kinds of robustness failure: task not being properly located versus performance collapsing across semantically equivalent phrasings?,"1,4","The context provided does not contain information about a specific paper named ""Reynolds paper."" However, based on the given documents, we can discuss how the papers described two different kinds of robustness failures.
+
+1. **Prompt Consistency**: The first document discusses research efforts focused on enhancing the inherent resilience of Large Language Models (LLMs) to prompt variations, which is referred to as ""prompt consistency."" This means that when a model encounters similar prompts or instructions, it should produce consistent and reliable outputs regardless of slight changes in wording.
+
+2. **Worst Prompt Performance**: The second document focuses on identifying the worst prompt performance among semantically equivalent prompts. It suggests that there are noticeable performance disparities across these prompts, which implies robustness failure occurs when the model's performance collapses or significantly degrades across different but semantically similar phrasings of a task.
+
+In summary:
+- **Prompt Consistency** addresses the issue where models should maintain consistent performance despite slight variations in prompt wording.
+- **Worst Prompt Performance** deals with the scenario where models fail to perform well even when presented with semantically equivalent prompts, indicating a robustness failure related to how well they handle different phrasings of the same task.
+
+These two concepts highlight different aspects of robustness failures: one is about maintaining performance consistency across similar prompts (prompt consistency), and the other is about identifying and understanding why certain phrasings lead to poor model performance (worst prompt performance).","[Chunk 1 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+2 Related Work
+Existing research on prompt robustness can be classified into two categories. On the one hand,
+research efforts have been focused on enhancing the inherent resilience of LLMs to prompt variations,
+namely prompt consistency. On the other hand, progress has been made in automating prompt
+engineering, the process to find the optimal prompt that yields the best performance.
+Prompt Consistency. Previous studies (Gu et al., 2022; Wang et al., 2023a; Zhu et al., 2023;
+
+------------------------
+
+[Chunk 2 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+Jiasheng Gu, Hongyu Zhao, Hanzi Xu, Liangyu Nie, Hongyuan Mei, and Wenpeng Yin. Robustness
+of learning from task instructions. ArXiv preprint, abs/2212.03813, 2022.
+Moran Mizrahi, Guy Kaplan, Dan Malkin, Rotem Dror, Dafna Shahaf, and Gabriel Stanovsky. State
+of what art? a call for multi-prompt llm evaluation. ArXiv preprint, abs/2401.00595, 2024.
+Jiuding Sun, Chantal Shaib, and Byron C Wallace. Evaluating the zero-shot robustness of instruction-
+tuned language models. ArXiv preprint, abs/2306.11270, 2023.
+
+------------------------
+
+[Chunk 3 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+4 Identifying the Worst Prompts
+Given the noticeable performance disparities across semantically equivalent prompts, our next
+question is: can we identify the worst prompt among these paraphrases? This would not only aid our
+understanding of the model’s lower bound but also be instrumental in improving model performance
+by guiding the refinement of prompts. We investigate this matter from both model-agnostic (§4.1)
+and model-dependent (§4.2) perspectives.
+4.1 Model-agnostic Analysis","[""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf""]"
+19,What pipeline does the paper describe for APE?,2,"The paper describes a pipeline for APE (Algorithmic Prompt Engineering) that involves:
+
+1. **Generating Instructions**: The process starts with generating instructions using either human instructions or model-generated instructions.
+
+2. **Evaluation and Selection**: An evaluation mechanism is used to compute scores for each instruction, allowing the selection of the most appropriate one based on these scores.
+
+3. **Execution**: Once an optimal instruction is selected, it is executed by APE (Algorithmic Prompt Engineering), which can handle a broad range of natural language programs.
+
+4. **Performance Measurement**: The quality and effectiveness of the instructions are measured during execution, particularly through metrics like interquartile mean across various NLP tasks.
+
+5. **Optimization**: In some cases, APE is used to optimize existing prompts (like CoT prompts) by discovering a new prompt that leads to better performance on specific tasks.
+
+This pipeline aims to enhance the capabilities of AI models in executing natural language programs and improving their performance through optimized instructions or prompts.","[Chunk 1 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+algorithm can be thought of as a greedy version of APE, without a search and selection process;
+thus, we refer to it as “Greedy”. Figure 4 shows the zero-shot performance of InstructGPT using
+human instructions and model generated instructions. Our algorithm outperforms “Greedy” on
+every task and achieves equal or better than human performance on 24 of 24 tasks. Moreover, the
+Interquartile Mean (IQM) (Agarwal et al., 2021) across all 24 tasks in Figure 1 suggests that APE with
+
+------------------------
+
+[Chunk 2 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+model, and selects the most appropriate instruction based on computed evaluation scores. (b) As
+measured by the interquartile mean across the 24 NLP tasks introduced by Honovich et al. (2022),
+APE is able to surpass human performance when using the InstructGPT model (Ouyang et al., 2022).
+can execute a broad range of natural language programs, the way these programs are processed may
+not be intuitive for humans, and the quality of instruction can only be measured when executing these
+
+------------------------
+
+[Chunk 3 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+compared to the original CoT prompt. We include full results on 12 tasks with this new APE CoT
+prompt in Figure 10.
+Figure 10: The performance of APE discovered prompt ""Let’s work this out in a step by step way
+to be sure we have the right answer."" on the 12 tasks from Kojima et al. (2022). We collect a CoT
+dataset from the original paper and filter out incorrect answers. We then use APE to optimize the CoT
+prompt. We improve performance on 6/12 tasks and nearly match human performance on 4/12 tasks.","[""YongchaoZhou_2023_LLMPrompt.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf""]"
+20,How does APE differ from Bayesian-optimization-based hard prompt tuning in what is being searched and how candidates are evaluated?,"2,3","The context provided does not contain enough information to directly compare APE (Assumed Prompt Enhancement) with Bayesian-optimization-based hard prompt tuning. The document discusses Bayesian Optimization as a method for prompt optimization, particularly focusing on Hard Prompt Tuning which searches for an optimal prompt without requiring access to the Large Language Model. However, there is no explicit mention of APE or its differences from Bayesian Optimization in terms of what is being searched and how candidates are evaluated.
+
+To answer this question accurately, we would need more specific details about APE's methodology, including what it searches for (the nature of prompts considered), how it evaluates candidate prompts, and any unique strategies it employs compared to the Bayesian Optimization approach described. Without such information, we cannot provide a precise comparison between APE and Bayesian-optimization-based hard prompt tuning based on the given context alone.","[Chunk 1 | Source: AntonioSabbatella_2024_PromptOptimization.pdf]
+Mathematics 2024, 12, 929 12 of 14
+Table 4. Comparative results over different prompt lengths for the task MRPC.
+Task Prompt Length Best Score on Test
+MRPC 25 79.7619
+MRPC 50 78.4431
+MRPC 75 78.4195
+5. Conclusions
+The main conclusion of this paper is that Bayesian Optimization could become an
+effective tool for prompt optimization. This vast discrete combinatorial prompt space
+poses specific challenges for direct optimization. The large discrete prompt search space is
+
+------------------------
+
+[Chunk 2 | Source: AntonioSabbatella_2024_PromptOptimization.pdf]
+Monte-Carlo Bayesian optimization. Adv. Neural Inf. Process. Syst. 2020, 33, 21524–21538.
+4. Brian, L.; Al-Rfou, R.; Constant, N. The power of scale for parameter-efficient prompt tuning. arXiv 2021, arXiv:2104.08691.
+5. Wei, J.; Wang, X.; Schuurmans, D.; Bosma, M.; Xia, F.; Chi, E.; Le, Q.V .; Zhou, D. Chain-of-thought prompting elicits reasoning in
+large language models. Adv. Neural Inf. Process. Syst. 2022, 35, 24824–24837.
+
+------------------------
+
+[Chunk 3 | Source: AntonioSabbatella_2024_PromptOptimization.pdf]
+and describes hard prompt tuning via Bayesian Optimization and the continuous
+relaxation of the combinatorial space.
+• Section 4 “Computational Results” presents datasets, baselines, andcomputational results.
+• Section 5 contains conclusions, limitations, and perspectives of the proposed approach.
+2. Related Works
+Different modeling and algorithmic strategies have been proposed for prompt opti-
+mization. Ref. [ 4] were among the first to demonstrate the power of prompting for task","[""AntonioSabbatella_2024_PromptOptimization.pdf"", ""AntonioSabbatella_2024_PromptOptimization.pdf"", ""AntonioSabbatella_2024_PromptOptimization.pdf""]"
+21,How do RLPG and PromptMaker represent two different prompt-design problems: selecting relevant context for the model versus helping humans iteratively design and evaluate prompts?,"6,7","RLPG (Repository-Level Prompt Generation) represents a problem focused on selecting relevant context for the large language models of code. It aims to compose prompt proposals that are useful and can scale well with the number of attempts, as evidenced by its higher success rate compared to other methods.
+
+On the other hand, PromptMaker might represent an iterative process where humans design and evaluate prompts themselves. The context suggests that this approach observes consistent behavior for both fixed prompt proposal methods and RLPG. However, it highlights that for the same value of k (a parameter or variable in the context), RLPG shows a higher success rate, indicating its ability to learn a useful ranking of prompt proposal contexts.
+
+In essence, while RLPG automates part of the prompt generation process by selecting relevant context, PromptMaker involves human interaction and evaluation in refining prompts.","[Chunk 1 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+Method Success Rate(%)
+(hole-wise)
+Rel. ↑(%)
+(hole-wise)
+Success Rate(%)
+(repo-wise)
+Rel. ↑(%)
+(repo-wise)
+Codex (Chen et al., 2021) 58.73 - 60.64 -
+Post Lines (immediate line after the hole) 65.78 12.00 68.01 12.15
+Post Lines (skipping three lines after the hole) 65.11 10.86 66.42 9.53
+D.4. Composition of prompt proposals
+Table 10 shows the performance of the two versions of RLPG when we compose the prompt proposal context from l prompt
+
+------------------------
+
+[Chunk 2 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+behaviour is observed for both fixed prompt proposal as
+well as RLPG. However, we see that for the same value of
+k, the success rate for RLPG is higher indicating that PPC
+learns a useful ranking of the prompt proposal contexts that
+can scale well with the #attempts.
+Performance based on Prompt Proposals: The bottom
+part of Figure 2 shows the mean success rate of prompt
+sources, where success is counted only when the corre-
+sponding prompt source is applicable. From the figure, we
+
+------------------------
+
+[Chunk 3 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+We further illustrate the difficulty in identifying the worst prompt from both model-
+agnostic and model-dependent perspectives, emphasizing the absence of a shortcut
+to characterize the worst prompt. We also attempt to enhance the worst prompt
+performance using existing prompt engineering and prompt consistency methods,
+but find that their impact is limited. These findings underscore the need to create
+more resilient LLMs that can maintain high performance across diverse prompts.","[""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf"", ""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf""]"
+22,"Across the two surveys, which methods are most relevant when the problem is long, chaotic, or noisy context rather than pure reasoning difficulty?","9,10","Based on the provided context, the method that is most relevant when dealing with long, chaotic, or noisy contexts rather than pure reasoning difficulty seems to be Thread of Thought (ThoT) Prompting. This method, proposed by Zhou et al. (2023), focuses on handling such contexts and enhancing the reasoning abilities of Large Language Models (LLMs). ThoT is designed to systematically examine extensive contexts into manageable segments for incremental analysis, which makes it particularly suitable for scenarios where the context is complex or noisy.","[Chunk 1 | Source: Shubham_2024_EngineeringMethodsForLLM.pdf]
+Mathematical Problem Solving. We came across only two datas ets while reading up on different prompting
+strategies for this task which are FeTaQA Nan et al. (2022) an d WikiTQPasupat & Liang (2015). Table 16
+shows above-mentioned datasets and different prompting me thods that have been experimented on them
+along with the best performing prompting strategy.
+3.17 T ABLE -BASED MATHEMATICAL PROBLEM SOLVING
+
+------------------------
+
+[Chunk 2 | Source: Shubham_2024_EngineeringMethodsForLLM.pdf]
+than based on the uncertainty metric. The results show that A ctive-Prompt is able to get better results than
+Self-Consistency, CoT, Auto-CoT and Random CoT across mult iple datasets for Mathematical Problem
+Solving, Commonsense Reasoning, Multi-Hop Reasoning, Com monsense Reasoning tasks.
+2.23 T HREAD -OF-T HOUGHT (T HOT)
+Zhou et al. (2023) proposes a prompting method focusing on ha ndling long chaotic contexts. It is based on
+
+------------------------
+
+[Chunk 3 | Source: PranabSahoo_2024_promptEngineering.pdf]
+score of 3.82 out of 5.
+Thread of Thought (ThoT) Prompting
+Zhou et al. [2023] presented Thread of Thought (ThoT), a
+prompting technique designed to enhance the reasoning abil-
+ities of LLMs within chaotic contexts. ThoT, inspired by hu-
+man cognition, systematically examines extensive contexts into
+manageable segments for incremental analysis, employing a
+two-phase approach where the LLM first summarizes and ex-
+amines each segment before refining the information for a final","[""Shubham_2024_EngineeringMethodsForLLM.pdf"", ""Shubham_2024_EngineeringMethodsForLLM.pdf"", ""PranabSahoo_2024_promptEngineering.pdf""]"
+23,Why can adding one example sometimes make performance worse instead of better in the translation setting?,1,"Adding an example might sometimes make performance worse instead of better in the translation setting because it could lead to overfitting, particularly in a zero-shot learning scenario. The selected instructions might perform well under conditions where there is no data (zero-shot), but when transitioning to scenarios with limited data (few-shot), they may not generalize effectively and thus negatively impact model performance. This suggests that the instructions might be tailored too closely for the specific task without considering its adaptability in different contexts, leading to a mismatch between instruction and actual context requirements.","[Chunk 1 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+we learn to produce prompts conditioned on each example.
+Another important distinction is that we do not require ac-
+cess to the weights of the LM. A concurrent work as ours,
+(Wang et al., 2022) studies the role of prompt-tuning when
+compared to fine-tuning for code translation, defect local-
+ization, and code summarization. However, their technique
+requires access to the weights of the LLM and they perform
+experiments over models that are much smaller in scale than
+
+------------------------
+
+[Chunk 2 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+In-context” in Figure 8. As shown in Figure 8, adding an instruction achieves a comparable or better
+test performance than the standard in-context learning performance on 21 of 24 tasks. Counter-
+intuitively, adding in-context examples for Rhymes, Large Animal, and Second Letters hurts model
+performance. We conjecture that it may be because the selected instructions overfit the zero-shot
+learning scenario and thus do not perform well on the few-shot case. Therefore, we experiment
+
+------------------------
+
+[Chunk 3 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+rhymes with itself. However, adding in-context examples for these instructions creates a misalignment
+between instruction (induces trivial rhymes) and context (induces non-trivial rhymes), resulting in a
+significant drop in performance. If we instead score the instructions based on the few-shot metric,
+this performance drop can be alleviated since the model can choose a more aligned instruction.
+Antonyms Cause Selection Common Concept Diff First Letter Formality Large Animal List Letters
+0
+1","[""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf""]"
+24,"Is APE basically just a fancier 'let’s think step by step,' or is it doing something different?",2,"APE (Automated Prompt Engineer) is not merely a fancier version of ""let's think step by step."" Based on the context provided, APE discovers better chain-of-thought (CoT) prompts than simple instructions like ""Let’s think step by step."" It finds more general and effective prompts such as ""Let’s work this out in a step by step way to be sure we have the right answer."" These prompts are able to improve the performance of large language models (LLMs) on tasks like zero-shot chain-of-thought reasoning, improving their accuracy from 78.7% to 82.0% on MultiArith and from 40.7% to 43.0% on GSM8K. This demonstrates that APE is capable of finding prompts that can significantly enhance the performance of LLMs beyond what simple step-by-step instructions might offer, suggesting it performs a more sophisticated task than just providing basic guidance.","[Chunk 1 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+Published as a conference paper at ICLR 2023
+C.3 Z ERO-SHOT CHAIN OF THOUGHT REASONING
+We use APE to discover a better chain of thought (CoT) prompt than ""Let’s think step by step."" from
+Kojima et al. (2022). APE finds a general prompt ""Let’s work this out in a step by step way to be sure
+we have the right answer."" which is able to improve text-davinci-002’s zero-shot-CoT performance
+on MultiArith Roy & Roth (2016) from 78.7 to 82.0 and GSM8K Cobbe et al. (2021) 40.7 to 43.0
+
+------------------------
+
+[Chunk 2 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+to find a prompt starting with “Let’s” that maximizes the likelihood of these correct reasoning steps.
+See Table 5 for the template used for prompt generation and evaluation. APE produces the prompt
+“Let’s work this out in a step by step way to be sure we have the right answer.” This generated prompt
+further improves performance from 78.7 to 82.0 on MultiArith and from 40.7 to 43.0 on GSM8K. We
+believe this general workflow represents a common use-case for APE where prompt engineers use
+
+------------------------
+
+[Chunk 3 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+we use APE without iterative search as default unless otherwise stated.
+4 L ARGE LANGUAGE MODELS ARE HUMAN -LEVEL PROMPT ENGINEERS
+This section examines how APE can guide LLMs to desired behaviors. We investigate from four
+perspectives: zero-shot performance, few-shot in-context learning performance, zero-shot chain-of-
+thought reasoning, and truthfulness. Our experiments show that APE can find prompts that improve
+task performance, performing equal to or even better than those authored by humans. APE also","[""YongchaoZhou_2023_LLMPrompt.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf""]"
+25,"If two user queries mean the same thing, why can an LLM still perform very differently on them according to the paper?",4,"According to the paper, even if two user queries have identical semantics and fluent expressions, large language models (LLMs) might still perform very differently on them. This variability in performance suggests that the current ability of LLMs to follow instructions is not robust enough. Instructions with similar meanings could lead models like Llama2-70B-chat from a level comparable to GPT4 (indicating equivalence to the reference model) to far below average levels. Scaling up models enhances their ability to follow instructions, but it does not necessarily correspondingly improve this robustness.","[Chunk 1 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+prompt performance, defined as the lowest performance a model exhibits across different paraphrases
+of a query with equal semantics and fluency, is a crucial metric for assessing the lower bound of
+LLM performance. Our extensive experiments on ChatGPT (gpt-3.5-turbo-1106) and six open-
+source LLMs from the Llama, Mistral, and Gemma families reveal substantial variability in model
+performance. For instance, Llama-2-70B-chat model shows a difference of up to 45.48 points in win-
+
+------------------------
+
+[Chunk 2 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+are 0.094 and 0.549, respectively, indicating a difference of 0.455. This suggests that the current
+LLMs’ ability to follow instructions is not robust enough. Even instructions with identical semantics
+and fluent expressions could lead models like Llama2-70B-chat to plummet from a level comparable
+to GPT4 (0.5 indicates equivalence to the reference model) to far below the average level (0.292).
+While scaling up models enhances their ability to follow instructions, it does not correspondingly
+
+------------------------
+
+[Chunk 3 | Source: Shubham_2024_EngineeringMethodsForLLM.pdf]
+versions of the original query but with same parameters. Par ameters here can refer to the numeric values in
+Mathematical Problem Solving task datapoints. For Fed-SP- SC, the answers are directly generated ﬁrst and
+then Self-Consistency is applied on top of it. The other one i s Fed-DP-CoT. In Fed-DP-CoT, LLMs are used
+to ﬁrst generate answers to different queries and then they a re federated by forming CoT to provide hints to","[""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""Shubham_2024_EngineeringMethodsForLLM.pdf""]"
+26,"If benchmark prompts are tidy but real user questions are messy, why does that matter for evaluating prompt performance?",4,"The tidiness of benchmark prompts versus the messiness of real user questions matters because it highlights a discrepancy between the evaluation methods used and their applicability to real-world scenarios. Benchmark prompts are often designed with consistency in mind, which can lead to overly simplified or idealized representations of tasks. This contrasts with real user queries, which tend to be more complex, varied, and less structured.
+
+The significance of this difference is that it affects the reliability and generalizability of prompt performance evaluations. When benchmarks fail to capture the nuances and complexities found in actual user interactions, they may not accurately reflect how well a model performs under real-world conditions. This can lead to overestimations or underestimations of a model's capabilities.
+
+To address this issue, researchers might explore alternative strategies such as allowing models to refine prompts themselves or developing more comprehensive evaluation frameworks that consider the full spectrum of user queries and tasks. These approaches aim to bridge the gap between idealized benchmarks and practical applications, ensuring that evaluations are more reflective of real-world performance and challenges.","[Chunk 1 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+Figure 1: An example illustrating the gap between existing benchmarks that evaluate prompt consis-
+tency and real user queries.
+Despite the efficacy of prompt engineering, it is not without its drawbacks. First, it is unrealistic to
+expect users to master the art of designing optimal prompts or to invest a significant amount of time
+in doing so. Second, automatic prompt engineering often necessitates testing on substantial labeled
+
+------------------------
+
+[Chunk 2 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+to improve model performance on arbitrary prompts. In this section, we investigate the effectiveness
+of applying these techniques to improve the worst prompt performance.
+Prompt Engineering Most existing prompt engineering methodologies fall short in tackling the
+worst-performance issue, due to the lack of a test set for a single unlabeled prompt. Therefore,
+we explore two alternative strategies: ( i) allowing the model to refine the prompts itself, and ( ii)
+
+------------------------
+
+[Chunk 3 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+primarily focus on task-level instructions and assume a corresponding test set for prompt selection.
+Specifically, they obtain the generation results on the test set and directly measure the downstream
+task performance. However, this is not possible for diverse real-world user queries, which further
+underscores the importance of the case-level setup in ROBUST ALPACA EVAL.
+5 Improving Worst Prompt Performance
+As discussed in §2, prompt engineering and prompt consistency approaches are commonly employed","[""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf""]"
+27,"If I do not have labels, how does test-time boosting decide which model-generated answers are trustworthy enough to reuse?",5,"In the absence of training labels, test-time boosting substitutes ground truth answer labels with model predictions. This approach uses a similar motivation as (Huang et al., 2022), where predictions with ""sufficient"" confidence or trustworthiness are considered for reusing. The decision on which model-generated answers are trustworthy enough to reuse is based on the confidence level of these predictions, effectively leveraging the model's own outputs in the absence of human-labeled data.","[Chunk 1 | Source: Silviu_2023_BoostedPromptEnsemblesforLLM.pdf]
+Test-time Boosting In the absence of training labels, our
+algorithm can be adapted to the transductive (where the
+entire unlabeled test set is available; see Algorithm 1) and
+online (where test problems come one at a time; see Algo-
+rithm 2 in Appendix B) settings. We call this “test-time
+boosting”. In this case, we substitute ground truth answer
+labels with model predictions, using a similar motivation as
+(Huang et al., 2022), whereby predictions with “sufﬁcient
+
+------------------------
+
+[Chunk 2 | Source: Silviu_2023_BoostedPromptEnsemblesforLLM.pdf]
+whether the optional argument answers A is provided).
+The output of our train-time algorithm is a set of prompts,
+which are then applied to the test set. The output of our
+test-time algorithm is a set of prompts together with a set of
+test predictions.
+Train-time Boosting In this case, we assume access to a
+small labeled dataset,DTrain = (T, A) = (qi, ai)N
+i=1, where
+ai are ﬁnal answer labels (we do not require chain of thought
+annotations, as we generate the chain of thought using the
+
+------------------------
+
+[Chunk 3 | Source: Silviu_2023_BoostedPromptEnsemblesforLLM.pdf]
+How we determine correctness depends on the setting, and
+leads to two different instances of our algorithm: train-time
+boosting, for the case where there is a small labeled training
+set or some human-in-the-loop supervision available, and
+test-time boosting, for the case where no supervision is avail-
+able and the model must rely solely on its own predictions.
+Both are summarized in Algorithm 1 (the difference being
+whether the optional argument answers A is provided).","[""Silviu_2023_BoostedPromptEnsemblesforLLM.pdf"", ""Silviu_2023_BoostedPromptEnsemblesforLLM.pdf"", ""Silviu_2023_BoostedPromptEnsemblesforLLM.pdf""]"
+28,My prompt worked on a few examples. Why does the paper still say that may not mean the prototype will work well in real use?,7,"The paper suggests that even if your prompt works on a few examples, it doesn't necessarily mean it will perform well in real-world scenarios for several reasons:
+
+1. **Semantic Changes and Performance Degradation**: Minor alterations in format without changing the meaning can lead to substantial performance degradation (Sclar et al., 2023). This implies that what might work in specific contexts or examples may not generalize across different situations.
+
+2. **Prompt Engineering's Limitations**: While prompt engineering is crucial for unlocking the full potential of large language models, it has its drawbacks. It requires expertise and time to design optimal prompts, which might be unrealistic expectations for users.
+
+3. **Lack of Real User Queries in Benchmarks**: Existing benchmarks that evaluate prompt consistency may not fully capture real user queries or scenarios. This means that what is tested in controlled environments might not reflect the complexity and variability encountered in actual usage.
+
+4. **Automation Challenges**: Automatic prompt engineering often necessitates substantial testing on labeled data, which can be time-consuming and resource-intensive. Moreover, it might not always yield optimal results as it lacks the human intuition and adaptability needed for nuanced interactions.
+
+In summary, while your prompt may work well in specific examples, real-world performance depends on various factors including context-specific nuances, potential changes in format without altering meaning, limitations of current evaluation methods, and challenges associated with automation.","[Chunk 1 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+Sun et al., 2023; Li et al., 2024). Even minor alterations in format, without semantic changes, can
+trigger substantial performance degradation (Sclar et al., 2023). Consequently, prompt engineering
+has surfaced as a critical component, playing a critical role in unlocking the full potential of these
+models (Shin et al., 2020; Zhou et al., 2022a; Pryzant et al., 2023; Prasad et al., 2023; Gonen et al.,
+2022; Schulhoff et al., 2024).
+
+------------------------
+
+[Chunk 2 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+Figure 1: An example illustrating the gap between existing benchmarks that evaluate prompt consis-
+tency and real user queries.
+Despite the efficacy of prompt engineering, it is not without its drawbacks. First, it is unrealistic to
+expect users to master the art of designing optimal prompts or to invest a significant amount of time
+in doing so. Second, automatic prompt engineering often necessitates testing on substantial labeled
+
+------------------------
+
+[Chunk 3 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+(Qin & Eisner, 2021; Lester et al., 2021) and natural language prompt engineering (Reynolds &
+McDonell, 2021). The latter is of particular interest, as it provides a natural interface for humans to
+communicate with machines and may be of great relevance not only to LLMs but to other generalist
+models such as prompted image synthesizers (Rombach et al., 2022; Ramesh et al., 2022), for which
+public interest in prompt design and generation has also emerged (see Appendix A for examples).","[""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf""]"
+29,Does the paper say how long APE takes to run end to end?,2,"The provided context does not contain information about the time it takes for APE to run end-to-end. The details mentioned are related to the version of pdfTeX used, LaTeX with hyperref creator, creation date, metadata labels such as author, keywords, and page content discussing the performance of InstructGPT, ""Greedy"" algorithm, survival plot, iterative search, comparison between APE and iterative APE, and an alternative CoT (Chain of Thought) prompt for APE. However, there is no mention of execution time or computational duration associated with running APE.","[Chunk 1 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+algorithm can be thought of as a greedy version of APE, without a search and selection process;
+thus, we refer to it as “Greedy”. Figure 4 shows the zero-shot performance of InstructGPT using
+human instructions and model generated instructions. Our algorithm outperforms “Greedy” on
+every task and achieves equal or better than human performance on 24 of 24 tasks. Moreover, the
+Interquartile Mean (IQM) (Agarwal et al., 2021) across all 24 tasks in Figure 1 suggests that APE with
+
+------------------------
+
+[Chunk 2 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+tasks in the Appendix. The survival plot shows that the curves increase as the round goes up, which
+suggests that iterative search does result in a higher-quality proposal set. However, we observe
+diminishing returns to further selection rounds as the quality seems to stabilize after three rounds.
+Do we need Iterative Search? We compare APE and iterative APE on six tasks6. As shown in
+Figure 7, the iterative search marginally improves performance on tasks where APE underperforms
+
+------------------------
+
+[Chunk 3 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+compared to the original CoT prompt. We include full results on 12 tasks with this new APE CoT
+prompt in Figure 10.
+Figure 10: The performance of APE discovered prompt ""Let’s work this out in a step by step way
+to be sure we have the right answer."" on the 12 tasks from Kojima et al. (2022). We collect a CoT
+dataset from the original paper and filter out incorrect answers. We then use APE to optimize the CoT
+prompt. We improve performance on 6/12 tasks and nearly match human performance on 4/12 tasks.","[""YongchaoZhou_2023_LLMPrompt.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf""]"
+30,Does the case study say what it cost in dollars to run PromptMaker?,7,"No, the context does not provide information about the cost of running PromptMaker or any specific tool related to prompt engineering. The documents discuss costs associated with certain models like GPT-4 and mention that prompt optimization can be a priority for cost-effectiveness in commercial applications, but they do not specify the cost of running PromptMaker.","[Chunk 1 | Source: AndrewKeanGao_2023_PromptEngineeringforLLM.pdf]
+cost. For example, few-shot prompting canmultiply the length of prompts by several times, leading to higher costs. OpenAI’s GPT-4 model costs$0.03 USD per 1,000 input tokens which can quickly add up. In commercial applications likeLLM-powered educational technology, streamlining prompts to be as cost-effective as possiblemaybeapriority. It seems that prompting becomes less important as LLMs become more advanced (moreparameters, more training data). It is not clear if this trend will continue indefinitelyor
+
+------------------------
+
+[Chunk 2 | Source: AntonioSabbatella_2024_PromptOptimization.pdf]
+Task PrompT-BO BDPL
+MRPC 379.02 571.75
+RTE 661.92 1081.62
+QQP 669.52 1070.14
+MNLI 896.61 1614.33
+QNL 398.96 587.87
+SST-2 264.23 384.84
+Runtime is an important metric to consider, especially with respect to the societal
+impact of LLMs and their prompt tuning. Indeed, PrompT-BO, like all other methods,
+might enable negative applications due to incorrect results in critical decision-making
+instances. It is therefore important that its implementation comply with ethical safety
+
+------------------------
+
+[Chunk 3 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+Figure 1: An example illustrating the gap between existing benchmarks that evaluate prompt consis-
+tency and real user queries.
+Despite the efficacy of prompt engineering, it is not without its drawbacks. First, it is unrealistic to
+expect users to master the art of designing optimal prompts or to invest a significant amount of time
+in doing so. Second, automatic prompt engineering often necessitates testing on substantial labeled","[""AndrewKeanGao_2023_PromptEngineeringforLLM.pdf"", ""AntonioSabbatella_2024_PromptOptimization.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf""]"
+31,"Does the paper provide enough evidence to say that few-shot examples help mainly by locating or formatting the task, rather than by teaching the model the translation task itself?",1,"The provided context does not contain enough information to definitively conclude whether few-shot examples help mainly by locating or formatting the task versus teaching the model the translation task itself. The documents discuss aspects of few-shot prompting and its impact on model performance, but they do not explicitly compare these two hypotheses in detail. To make such a conclusion, one would need more specific evidence from the paper that directly addresses how few-shot examples are utilized and their primary function within the context of task understanding or translation learning.","[Chunk 1 | Source: PranabSahoo_2024_promptEngineering.pdf]
+Few-shot prompting provides models with a few input-output
+examples to induce an understanding of a given task, unlike
+zero-shot prompting, where no examples are supplied [Brown
+et al. , 2020]. Providing even a few high-quality examples
+has improved model performance on complex tasks compared
+to no demonstration. However, few-shot prompting requires
+additional tokens to include the examples, which may become
+prohibitive for longer text inputs. Moreover, the selection
+
+------------------------
+
+[Chunk 2 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+Tianyu Gao, Adam Fisch, and Danqi Chen. Making pre-trained language models better few-shot
+learners. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguis-
+tics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long
+Papers), pp. 3816–3830, Online, August 2021. Association for Computational Linguistics. doi:
+10.18653/v1/2021.acl-long.295. URL https://aclanthology.org/2021.acl-long.
+295.
+
+------------------------
+
+[Chunk 3 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+In-context” in Figure 8. As shown in Figure 8, adding an instruction achieves a comparable or better
+test performance than the standard in-context learning performance on 21 of 24 tasks. Counter-
+intuitively, adding in-context examples for Rhymes, Large Animal, and Second Letters hurts model
+performance. We conjecture that it may be because the selected instructions overfit the zero-shot
+learning scenario and thus do not perform well on the few-shot case. Therefore, we experiment","[""PranabSahoo_2024_promptEngineering.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf""]"
+32,Does the paper provide sufficient evidence to conclude that boosted prompt ensembles are always better than the single-prompt baselines evaluated in the paper?,5,"Yes, based on the context provided, the paper suggests that when a small training dataset (50-300 samples) is available, boosted prompt ensembles are superior to randomly bagging few-shot examples as well as to single-prompt self-consistency. The difference can be quite large if the initial prompt is suboptimal. This indicates that the paper provides sufficient evidence to conclude that boosted prompt ensembles offer a performance advantage over single prompt and bagged ensembles under certain conditions.","[Chunk 1 | Source: Silviu_2023_BoostedPromptEnsemblesforLLM.pdf]
+single prompt samples for self-consistency, and for bagging
+and boosting, 10 samples from each of 10 prompts.
+Do boosted prompt ensembles offer a performance ad-
+vantage over single prompt and bagged ensembles?
+Yes, in all cases, when a small training dataset (50-300
+samples) is available, we ﬁnd that boosting is superior to
+randomly bagging few shot examples as well as to single-
+prompt self-consistency. The difference to the latter can be
+quite large if the initial prompt is suboptimal, as observed
+
+------------------------
+
+[Chunk 2 | Source: Silviu_2023_BoostedPromptEnsemblesforLLM.pdf]
+This can then lead to a decrease in test-time performance, as
+the boosted prompts may contain more incorrect examples.
+Can we further improve performance by applying
+weights to the ensemble members?
+Classical boosting applies weights to the ensemble members
+(Freund et al., 1999). Though lacking in mathematical mo-
+tivation, we consider applying weights to boosted prompt
+ensembles via the K-class Adaboost formula from Hastie
+et al. (2009):
+wi = log [(1− erri)/erri] + log(K− 1)
+
+------------------------
+
+[Chunk 3 | Source: Silviu_2023_BoostedPromptEnsemblesforLLM.pdf]
+derstandable, because boosted prompting uses the model to
+provide self supervised chains of thought for all subsequent
+ensemble members and a worse initial prompt means worse
+self supervision. The performance of the original prompt is
+also a direct factor since we keep the original prompt as one
+of the ten ensemble members.
+How does varying the number of ensemble members /
+samples per ensemble member impact results?
+In Table 2, we report results on AQUA where we vary the","[""Silviu_2023_BoostedPromptEnsemblesforLLM.pdf"", ""Silviu_2023_BoostedPromptEnsemblesforLLM.pdf"", ""Silviu_2023_BoostedPromptEnsemblesforLLM.pdf""]"
+33,"If a newer model not tested in this paper came out today, could we use this paper alone to know which prompt would be its worst-performing paraphrase?",4,"No
+
+Justification: The context provided does not include information about the experiments conducted in the paper. Therefore, it is not possible to determine if the paper includes enough data or analysis to predict how a newer model might perform on specific prompts based solely on its findings. The guidelines mentioned state that an answer of ""Yes"" would imply that the paper includes experiments and provides sufficient evidence for such predictions, which cannot be confirmed with the given information.","[Chunk 1 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+4 Identifying the Worst Prompts
+Given the noticeable performance disparities across semantically equivalent prompts, our next
+question is: can we identify the worst prompt among these paraphrases? This would not only aid our
+understanding of the model’s lower bound but also be instrumental in improving model performance
+by guiding the refinement of prompts. We investigate this matter from both model-agnostic (§4.1)
+and model-dependent (§4.2) perspectives.
+4.1 Model-agnostic Analysis
+
+------------------------
+
+[Chunk 2 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+of the paper (regardless of whether the code and data are provided or not)?
+Answer: [Yes]
+Justification: In Section 3 (Benchmarking the Worst Prompt Performance), 4 (Identifying
+the Worst Prompts) and 5 (Improving Worst Prompt Performance).
+Guidelines:
+• The answer NA means that the paper does not include experiments.
+• If the paper includes experiments, a No answer to this question will not be perceived
+well by the reviewers: Making the paper reproducible is important, regardless of
+
+------------------------
+
+[Chunk 3 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+Overlap of the worst prompts across different
+models. If many of the worst prompts are model-
+agnostic, there must exist certain prompts that,
+among their semantically equivalent paraphrases,
+consistently rank as the worst performing across
+all models. To quantify the prevalence of such
+prompts, we calculate the rate of the model-agnostic
+worst-k prompt. Let Wm(x, k) denote the worst-k-
+performing prompts for model m on case x, and let
+the set of worst- k prompts for model m on dataset
+D be Wm(D, k) = S","[""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf""]"
+34,"Based on this paper alone, can we tell whether prompt-based prototyping would replace specialized ML pipelines in real production teams today?",7,"Based on the provided context from these documents, there is no information that directly addresses whether prompt-based prototyping would replace specialized Machine Learning (ML) pipelines in real production teams today. The documents discuss various aspects of prompt engineering and its significance in guiding model outputs without altering parameters, as well as the potential for minor format changes to trigger substantial performance degradation in large language models. However, they do not provide a clear stance or conclusion on whether prompt-based methods could replace traditional ML pipelines in practical applications.","[Chunk 1 | Source: PranabSahoo_2024_promptEngineering.pdf]
+is often required for task-specific performance. This is the
+transformative promise of prompt engineering, pushing the
+boundaries of AI and opening doors to a future brimming with
+possibilities. In an ever-evolving landscape, ongoing research
+consistently reveals innovative approaches and applications
+within prompt engineering. The significance of prompt engi-
+neering is underscored by its capacity to steer model responses,
+enhancing the adaptability and applicability of LLMs across
+
+------------------------
+
+[Chunk 2 | Source: BowenCao_2024_WorstPromptPerformanceofLLM.pdf]
+Sun et al., 2023; Li et al., 2024). Even minor alterations in format, without semantic changes, can
+trigger substantial performance degradation (Sclar et al., 2023). Consequently, prompt engineering
+has surfaced as a critical component, playing a critical role in unlocking the full potential of these
+models (Shin et al., 2020; Zhou et al., 2022a; Pryzant et al., 2023; Prasad et al., 2023; Gonen et al.,
+2022; Schulhoff et al., 2024).
+
+------------------------
+
+[Chunk 3 | Source: PranabSahoo_2024_promptEngineering.pdf]
+strategically designing task-specific instructions, referred to
+as prompts, to guide model output without altering param-
+eters. The significance of prompt engineering is especially
+∗Work does not relate to position at Amazon.
+Prompt Engineering
+Instruction 
+User's Input
+LLM
+Pre-trained on
+billions of
+parameters
+Output: Response
+ generated by LLMContext
+Figure 1: Visual breakdown of prompt engineering components:
+LLMs trained on extensive data, instruction and context as pivotal","[""PranabSahoo_2024_promptEngineering.pdf"", ""BowenCao_2024_WorstPromptPerformanceofLLM.pdf"", ""PranabSahoo_2024_promptEngineering.pdf""]"
+35,"Since few-shot examples teach the task at runtime, does the paper conclude that adding more examples is always safer than zero-shot prompting?",1,"The context provided does not explicitly state whether the paper concludes that adding more examples in few-shot prompting is always safer than zero-shot prompting. The documents discuss the differences between few-shot and zero-shot prompting but do not provide a definitive conclusion on which method is safer or more effective under all circumstances. The papers mention that providing even a few high-quality examples has improved model performance on complex tasks compared to no demonstration, but they also note that for longer text inputs, including examples in few-shot prompting may become prohibitive. Additionally, the context suggests that there might be scenarios where adding in-context examples can hurt model performance, particularly if the instructions overfit the zero-shot learning scenario and do not perform well on the few-shot case. Therefore, based on the information provided, it cannot be concluded that adding more examples is always safer than zero-shot prompting; rather, the effectiveness depends on various factors including task complexity, input length, and how well the examples align with the specific requirements of the task at hand.","[Chunk 1 | Source: PranabSahoo_2024_promptEngineering.pdf]
+Few-shot prompting provides models with a few input-output
+examples to induce an understanding of a given task, unlike
+zero-shot prompting, where no examples are supplied [Brown
+et al. , 2020]. Providing even a few high-quality examples
+has improved model performance on complex tasks compared
+to no demonstration. However, few-shot prompting requires
+additional tokens to include the examples, which may become
+prohibitive for longer text inputs. Moreover, the selection
+
+------------------------
+
+[Chunk 2 | Source: Shubham_2024_EngineeringMethodsForLLM.pdf]
+either zero-shot or few-shot variation and there may not be a possibility for any other variation to exist. In
+zero-shot Radford et al. (2019) setting, there is no trainin g data involved and an LLM is asked to perform
+a task through prompt instructions while completely relyin g on it’s embedded knowledge learnt during it’s
+pre-training phase. On the other hand, in few-shot variatio n Brown et al. (2020), few training datapoints are
+
+------------------------
+
+[Chunk 3 | Source: YongchaoZhou_2023_LLMPrompt.pdf]
+test performance than the standard in-context learning performance on 21 of 24 tasks. Counter-
+intuitively, adding in-context examples for Rhymes, Large Animal, and Second Letters hurts model
+performance. We conjecture that it may be because the selected instructions overfit the zero-shot
+learning scenario and thus do not perform well on the few-shot case. Therefore, we experiment
+using few-shot execution accuracy as the selection metric. Figure 14 shows that the few-shot metric","[""PranabSahoo_2024_promptEngineering.pdf"", ""Shubham_2024_EngineeringMethodsForLLM.pdf"", ""YongchaoZhou_2023_LLMPrompt.pdf""]"
+36,"Since RLPG uses repository-level context, does the paper show that repository context alone is always sufficient, even without outside API documentation?",6,"No, the paper does not suggest that repository context alone is always sufficient for RLPG. It mentions that while repositories can be very large and contain a lot of relevant information (with 70.22% of repositories having more than 32k tokens), there are other sources of relevant context beyond just the current repository. These include API documentation, tutorials, and related repositories, which can also aid in code autocompletion. RLPG offers a mechanism to incorporate these additional sources of context through new prompt proposals.","[Chunk 1 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+repository as well as the relevant context in the files in the
+repository. In RLPG, the choice of where from and what
+to take from the repository is specified by a set of prompt
+proposals. For example, one of the prompt proposals can be
+1https://copilot.github.com/
+1
+
+------------------------
+
+[Chunk 2 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+In this section, we provide details of our framework. We
+start by describing our prompt proposals and then discuss
+our prompt proposal classifier which is followed by a de-
+scription of the prompt composer.
+2.1. Repo-Level Prompt Proposals
+The core idea of RLPG consists of substituting part of the de-
+fault context used by Codex with context coming from some-
+where else in the repository. The decision of what to take
+and from where in the repository to take from is governed
+
+------------------------
+
+[Chunk 3 | Source: Disha_2023_Repository-LevelPromptGenerationforLLM.pdf]
+software repositories are often much longer. In our dataset
+(after deduplication), we observed that 70.22% of reposito-
+ries contain more than 32k tokens. It is worth noting that
+apart from the current repository, there are other sources
+of relevant context, such as API documentation, tutorials,
+or related repositories, that can aid in code autocompletion.
+RLPG offers a mechanism to incorporate these additional
+sources of context through new prompt proposals. There-","[""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf"", ""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf"", ""Disha_2023_Repository-LevelPromptGenerationforLLM.pdf""]"
