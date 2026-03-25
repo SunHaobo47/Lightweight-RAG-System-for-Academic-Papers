@@ -4,7 +4,7 @@
 当前模块包含两部分：一是**PDF语料的预处理**（从原始PDF中提取文本、清洗并生成结构化文件），二是**RAG 基准测试推理**（利用向量检索和大模型批量生成格式化的评测数据）。
 
 ---
-## Demo
+## 交互APP
 
 https://github.com/user-attachments/assets/84746155-0e44-4057-b0fa-2c0b06cd2265
 
@@ -86,6 +86,16 @@ python process_pdfs.py --pdf_dir ./data/papers/raw --out_dir ./data/papers/proce
 该步骤会构建 FAISS 向量库，并根据 `benchmarking_question.xlsx` 批量生成大模型的回答及检索到的证据（Context）。
 
 运行对应的 Jupyter Notebook， 即retrieval_main_chain.ipynb。
+
+### Task 4: Demo与可视化交互app
+① demo.py为任务1与任务2的合并文档。
+```bash
+python demo.py
+```
+② app.py为可视化交互app前端，backend.py由demo.py删减得到的交互app后端。只运行app.py即可，运行方式如下：
+```bash
+streamlit run app.py
+```
 
 ## 输出说明
 
