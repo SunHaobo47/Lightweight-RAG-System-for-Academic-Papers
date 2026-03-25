@@ -4,6 +4,11 @@
 当前模块包含两部分：一是**PDF语料的预处理**（从原始PDF中提取文本、清洗并生成结构化文件），二是**RAG 基准测试推理**（利用向量检索和大模型批量生成格式化的评测数据）。
 
 ---
+## Demo
+
+
+https://github.com/user-attachments/assets/07aedc00-f8f8-4ac1-98c3-a3d66245eb1c
+
 
 ## 环境配置
 
