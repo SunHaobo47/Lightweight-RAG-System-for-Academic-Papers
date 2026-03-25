@@ -6,9 +6,7 @@
 ---
 ## Demo
 
-
-Uploading 908081e7615cb5579219e346a4b195d0_raw.mp4…
-
+https://github.com/user-attachments/assets/84746155-0e44-4057-b0fa-2c0b06cd2265
 
 ## 环境配置
 
