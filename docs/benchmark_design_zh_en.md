@@ -1,22 +1,22 @@
-# benchmark_design.md
+# benchmark_design_zh_en.md
 
 ## 1. 项目定位 (Project Positioning)
 
-这套 benchmark 的目标，是评估一个 lightweight RAG system 在 academic-paper corpus 上，能否完成以下几个核心环节：
+这套 benchmark 用于评估一个 lightweight RAG system 在 academic-paper corpus 上的问答表现，关注以下四个方面：
 
 - 检索相关证据 (retrieve relevant evidence)
 - 忠实使用证据 (use evidence faithfully)
 - 在需要时做信息整合 (integrate information when needed)
 - 正确处理回答边界 (handle answer boundaries correctly)
 
-它是一套轻量级、解释导向、资源受限条件下的诊断型评测设计 (lightweight, interpretable, resource-constrained diagnostic evaluation)。
+它采用轻量级、解释导向的设计，使 retrieval、generation 与 boundary handling 可以被分开观察。评测重点是 evidence sufficiency、evidence faithfulness 与 answer boundary control，而不是答案是否“听起来合理”。
 
-这套设计始终保留两层核心解释力：
+为支持结果分析，这套设计保留两层基本区分：
 
-- **Retrieval**：系统有没有找回足以支撑正确回答的核心证据
-- **Generation**：在证据已经足够时，系统有没有正确使用这些证据并生成受约束的回答
+- **Retrieval**：系统是否找回了足以支撑正确回答的核心证据
+- **Generation**：在证据已经足够时，系统是否正确使用这些证据并生成受约束的回答
 
-在主结果 (main reporting) 中，失败统一收束为一个简化 taxonomy：
+在结果记录中，失败统一收束为一个简化 taxonomy：
 
 - **Retrieval failure**：检回证据不足、缺核心部分或偏题，因此正确答案在当前检回内容上不可导出
 - **Generation failure**：证据已经足够，但答案仍然错误
@@ -26,7 +26,7 @@
 
 ## 2. 已提交 Assets 的功能 (Committed Benchmark Assets)
 
-当前要提交的 benchmark package 可以分成两个角色。
+当前提交的内容主要由两个文件构成。
 
 ### 2.1 主定义工作簿 (Primary benchmark-definition workbook)
 
@@ -37,7 +37,7 @@
 - **Main-36**：正式跑分与结果分析使用的主评测集
 - **Paper Map**：语料文档与出题用途之间的映射表
 
-其中 `Main-36` 是真正的 operational core，负责定义每道题，使其达到：
+其中 `Main-36` 是真正的核心定义表，负责定义每道题，使其达到：
 
 - 可运行 (runnable)
 - 可评分 (gradable)
@@ -55,7 +55,7 @@
 - supporting evidence 的临时位置
 - supporting evidence 文本
 
-它是 supporting file，而不是 headline benchmark-definition file。
+它是证据支持文件，而不是主 benchmark 定义文件。
 
 ---
 
@@ -77,7 +77,8 @@
 ### 3.1 A / B / C / D 题型框架 (Question Taxonomy)
 
 #### A 类：真实用户题 (Real-user questions)
-目的：测试真实问法下的 practical usability。  
+
+目的：测试真实问法下的实际可用性。\
 重点：
 
 - 基本检索 (basic retrieval)
@@ -85,7 +86,8 @@
 - 单跳证据使用 (single-hop evidence use)
 
 #### B 类：标准任务题 (Standard task questions)
-目的：测试 structured task execution 与跨系统稳定比较。  
+
+目的：测试结构化任务执行能力与跨系统稳定比较。\
 重点：
 
 - 多片段检索 (multi-span retrieval)
@@ -93,7 +95,8 @@
 - 结构化回答 (structured answer generation)
 
 #### C 类：压力 / 鲁棒性题 (Stress / robustness questions)
-目的：测试系统对较不整洁输入的承受能力。  
+
+目的：测试系统对较不整洁输入的承受能力。\
 重点：
 
 - 语义鲁棒性 (semantic robustness)
@@ -101,6 +104,7 @@
 - 模糊查询下的 generation 稳健性
 
 #### D 类：拒答 / 边界题 (Refusal / boundary questions)
+
 目的：测试系统会不会乱编 (hallucinate) 或错误处理不可正常回答的情况。
 
 D 类保留四个子类：
@@ -131,7 +135,6 @@ D1–D4 单独划分，因为它影响 refusal、boundary handling 与 hallucina
 - `Retrieval Pass Rule`
 - `Generation Pass Rule`
 - `Expected Response Policy`
-- `Eval Profile`
 
 ### 4.1 各字段作用 (Role of Each Field)
 
@@ -139,7 +142,13 @@ D1–D4 单独划分，因为它影响 refusal、boundary handling 与 hallucina
 - **Question**：最终喂给系统的 benchmark question
 - **Primary Type**：A / B / C / D1 / D2 / D3 / D4
 - **Source Doc IDs**：对应 `Paper Map` 中的 source-document 编号
-- **Target Answer Type**：期待的回答方式，例如 explanation、comparison、abstention、premise correction
+- **Target Answer Type**：期待的回答方式。当前支持的类型包括：
+  - `Explanatory`：说明概念、原因、机制、影响或现象
+  - `Comparative`：比较两个或多项对象、方法、观点或结果
+  - `Procedural`：描述步骤、流程或操作顺序
+  - `Mapping / Retrieval`：用于定位、映射、归类或表项查找
+  - `Diagnostic`：用于错误分析、失效模式分析或问题诊断
+  - `Non-answer / Correction`：用于拒答、保留判断或纠正错误前提
 - **Answerability**：该题在当前语料下是否可答、如何可答
 - **Evidence Scope Note**：简短说明证据边界 (evidence boundary)
 - **Reference Answer**：在当前证据边界内的理想参考答案
@@ -147,8 +156,11 @@ D1–D4 单独划分，因为它影响 refusal、boundary handling 与 hallucina
 - **Critical Error**：足以直接判失败的致命错误
 - **Retrieval Pass Rule**：检索何时算通过
 - **Generation Pass Rule**：生成何时算通过
-- **Expected Response Policy**：期望的响应策略，如 direct answer、abstain、qualified answer、correct false premise
-- **Eval Profile**：后续 judge / export 用的轻量评测配置标签
+- **Expected Response Policy**：期望的响应策略。当前支持的类型包括：
+  - `direct_answer`：直接回答问题
+  - `abstain_missing_info`：因关键信息缺失而拒答
+  - `qualified_answer`：在证据不足或边界受限时给出保留式回答
+  - `correct_false_premise`：指出并纠正错误前提
 
 ### 4.2 当前 answerability 与 response-policy 分布
 
@@ -161,13 +173,31 @@ D1–D4 单独划分，因为它影响 refusal、boundary handling 与 hallucina
 
 当前 `Expected Response Policy` 分布为：
 
-- **direct_answer**：28
-- **abstain_missing_info**：4
-- **qualified_answer**：2
-- **correct_false_premise**：2
+- **direct\_answer**：28
+- **abstain\_missing\_info**：4
+- **qualified\_answer**：2
+- **correct\_false\_premise**：2
 
-这个分布符合设计意图：  
-大多数题仍是普通可答题 (normal answerable tasks)，但同时保留一个明确的边界处理子集，用于测试 refusal、insufficiency、external dependency 与 premise correction。
+这个分布符合设计意图：大多数题仍是普通可答题，同时保留一个明确的边界处理子集，用于测试 refusal、insufficiency、external dependency 与 premise correction。
+
+### 4.3 Answerability 框架 (Answerability Framework)
+
+本 benchmark 统一使用四个 answerability 标签：
+
+- **Answerable**
+- **Insufficient**
+- **External-only**
+- **False-premise**
+
+它们定义了在当前语料边界下，什么样的回答才算正确，并作为题目主分类 ABCD 的补充。
+
+其作用包括：
+
+- 决定系统是否应直接作答
+- 帮助识别 failure 是否属于 boundary handling
+- 区分 D 类内部不同类型的不可正常回答情形
+
+在当前设计中，answerability 被作为一个预设分析维度，与 ABCD、simplified failure type 和 core evidence support 一起，为后续结果分析提供一个初步结构。
 
 ---
 
@@ -181,41 +211,14 @@ D1–D4 单独划分，因为它影响 refusal、boundary handling 与 hallucina
 - `Paper Role`
 - `Best Use for Question Design`
 
-这张表的目的是回答：  
-**每篇 source paper 在语料里扮演什么角色，以及它最适合支撑什么类型的问题设计。**
+目的：\
+标注每篇 source paper 在语料里扮演什么角色，以及它最适合支撑什么类型的问题设计。
 
 ---
 
-## 6. Answerability 框架 (Answerability Framework)
+## 6. Evidence 设计 (Evidence Design)
 
-本 benchmark 统一使用四个 answerability 标签：
-
-- **Answerable**
-- **Insufficient**
-- **External-only**
-- **False-premise**
-
-它们定义“什么样的回答才算正确”的框架，作为题目主分类 ABCD 的补充。
-
-其作用包括：
-
-- 决定系统是否应直接作答
-- 帮助识别 failure 是否属于 boundary handling
-- 区分 D 类内部不同类型的不可正常回答情形
-
-在当前设计中，answerability 被视为四条主分析轴之一，与：
-
-- ABCD
-- simplified failure type
-- core evidence support
-
-并列。
-
----
-
-## 7. Evidence 设计与当前 evidence 状态 (Evidence Design and Status)
-
-在这套 benchmark 中，evidence 不是最终分数本身，而是判分链条中的证据基础 (evidential basis)。  
+在这套 benchmark 中，evidence 不是最终分数本身，而是判分链条中的证据基础 (evidential basis)。\
 它定义的是：
 
 - 当前语料最多支持到哪里
@@ -228,14 +231,14 @@ D1–D4 单独划分，因为它影响 refusal、boundary handling 与 hallucina
 
 在这个链条中：
 
-- **Core Evidence**：支撑正确回答所必需的最小核心证据集合  
+- **Core Evidence**：支撑正确回答所必需的最小核心证据集合\
   (minimum core evidence required for a correct answer)
-- **Supporting Evidence**：有帮助但非必需的补充证据  
+- **Supporting Evidence**：有帮助但非必需的补充证据\
   (helpful but non-essential evidence)
 
-### 7.1 Core Evidence 的定义与作用
+### 6.1 Core Evidence 的定义与作用
 
-Core Evidence 不等于“最完整的证据集合”，也不等于“所有相关内容”。  
+Core Evidence 不等于“最完整的证据集合”，也不等于“所有相关内容”。\
 它的定义是：
 
 > **如果缺少这部分证据，系统不应被判定为 retrieval sufficient；如果这部分证据已经被检回，则正确答案在原则上应可从当前证据中导出。**
@@ -247,7 +250,7 @@ Core Evidence 不等于“最完整的证据集合”，也不等于“所有相
 - 约束 Reference Answer / Minimum Acceptable Answer 的支持边界
 - 支撑 D 类题中的 abstention / qualified answer / premise correction 判断
 
-### 7.2 Supporting Evidence 的定义与作用
+### 6.2 Supporting Evidence 的定义与作用
 
 Supporting Evidence 指与问题相关、能补充上下文、去歧义、增强回答完整性或支撑边界判断的证据，但它本身通常不决定“该题是否已经可答”。
 
@@ -256,94 +259,23 @@ Supporting Evidence 可用于：
 - 补充比较、限制条件或背景信息
 - 支撑更完整、更稳健的生成
 - 帮助判断哪些说法属于 overclaiming
-- 支撑 D 类题中的谨慎回答或边界说明
-
-因此，Supporting Evidence 是**有帮助的补充层**，但不应默认作为 retrieval sufficiency 的硬门槛。
-
-### 7.3 当前项目中 evidence 的性质
-
-结合当前工作流，项目中的 evidence 更准确地应描述为：
-
-**weakly grounded but source-anchored evidence**
-
-即：
-
-- 语料是真实的 (real corpus)
-- evidence 锚定真实 source
-- evidence 的抽取、压缩、改写、整理有 LLM assistance
-- 边界经过检查 (boundary checking was LLM-assisted)
-- 但尚未达到 fully human-verified benchmark-grade evidence 的强度  
-  （其中问题 ID 1, 2, 13, 20, 35 的 evidence-related fields 与 answer-related fields 经过人工检查并通过）
-
-因此，这批 evidence 适合支撑：
-
-- 相对比较 (relative comparison)
-- 趋势观察 (trend observation)
-- 题级判分 (question-level grading)
-- 初步失效模式分析 (initial failure-mode analysis)
-
-在写结论时，应避免把它表述为 fully human-grounded benchmark evidence。
-
-### 7.4 当前 evidence 文件的角色
-
-当前 evidence 主要保存在 `evidence_prep_draft.xlsx` 中，作为 supporting workbook，而非主 benchmark-definition file。  
-其中：
-
-- `Core Evidence Location (Temp)` / `Core Evidence Text`  
-  用于记录最小核心证据的临时位置与文本
-- `Supporting Evidence Location (Temp)` / `Supporting Evidence Text`  
-  用于记录辅助证据的临时位置与文本
-
-这套 evidence 文件的主要作用不是直接给出最终分数，而是：
-
-- 约束回答边界
-- 支撑 pass rule 的制定
-- 为 retrieval / generation failure attribution 提供依据
-- 为后续 chunk-level 映射或 lightweight qrels 对齐提供基础
-
-### 7.5 当前阶段的粒度选择
-
-在当前项目阶段，evidence 以**语义证据层**为主，而不是 fully frozen chunk-level qrels。  
-原因包括：
-
-- 当前 benchmark 的核心目标是 diagnostic evaluation，而非标准 IR 排名测评
-- chunking 策略尚依赖代码侧最终实现
-- 过早绑定 chunk ID 会增加维护成本，并可能因 chunking 调整而失效
-
-因此，当前更合适的做法是：
-
-- 先冻结 Core Evidence / Supporting Evidence 的语义定义
-- 后续在 retrieval pipeline 稳定后，仅对 Core Evidence 做轻量 chunk 映射
-- 暂不构建 full chunk-level exhaustive qrels
+- 支撑更细粒度的人工复核
 
 ---
 
-## 8. Answer 字段编写原则 (Rules for Answer Fields)
+## 7. Current Status and Limitations
 
-`Reference Answer`、`Minimum Acceptable Answer`、`Critical Error` 应被视为同一个 judging system 中的三个层级，而不是彼此独立的说明栏。
+当前版本中，evidence 被视为 **weakly grounded**。
 
-### 8.1 Reference Answer
-应写成 evidence boundary 内的真正参考答案，而不是 “should explain ...” 这类说明句。
+即：
 
-### 8.2 Minimum Acceptable Answer
-应压缩成最低通过线 (minimum passing line)，只保留判断是否过线所必需的核心点。
+- `Main-36` 已具备题目定义、answerability、response policy、reference answer、minimum acceptable answer、critical error 和 pass rule 等核心判分要素
+- 当前 evidence 体系尚未完成逐题精修；现阶段的 grounded evidence 主要由高级 LLM 辅助整理，并以人工校核作为补充
+- 已完成人工复查的题目、evidence 与 answer 包括：ID 1、2、13、20、29–36
 
-### 8.3 Critical Error
-应只保留 1–2 条 decisive failure pattern，不要写成一般性不足清单。
+已可用于：
 
-这三列已经经过校准，并与以下内容对齐：
-
-- source-document evidence
-- core / supporting evidence boundary
-- generation pass rule
-
-### 8.4 Relationship between Evidence and Answer Fields
-
-Evidence fields and answer fields serve different but linked roles.
-
-- **Core / Supporting Evidence** define the support boundary of the corpus.
-- **Reference Answer** defines the ideal answer within that boundary.
-- **Minimum Acceptable Answer** defines the minimum passing line within that boundary.
-- **Critical Error** defines decisive answer-level failure patterns that violate that boundary.
-
-In other words, evidence fields anchor what the corpus can support, while answer fields define how that support is operationalized in grading.
+- 小规模系统比较
+- 初步错误模式分析
+- 初步的 retrieval / generation 归因分析
+- exploratory result analysis
